@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: gray;
+      }
+    </style>
   </head>
   <body>
     <form>
@@ -29,22 +35,22 @@
       <h3>시간 선택</h3>
       <label>
         시작시간
-        <input type="time" />
+        <input type="time" value="09:00" />
       </label>
       <label>
         종료시간
-        <input type="time" />
+        <input type="time" value="18:00" />
       </label>
 
       <h3>날짜와 시간 선택</h3>
       <label>
         시작 날짜와 시간
-        <input type="datetime-local" />
+        <input type="datetime-local" value="2021-11-23T09:00" />
       </label>
       <br /><br />
       <label>
         종료 날짜와 시간
-        <input type="datetime-local" />
+        <input type="datetime-local" value="2021-11-23T18:00" />
       </label>
     </form>
   </body>
