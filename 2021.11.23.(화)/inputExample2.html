@@ -6,15 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        display: flexbox;
-        box-sizing: border-box;
-      }
-      h1 {
-        text-align: center;
-      }
-      form {
+      .title {
         display: block;
+        text-align: center;
       }
       fieldset {
         margin: 20px;
@@ -31,19 +25,30 @@
     </style>
   </head>
   <body>
-    <h1>상품주문서</h1>
+    <h1 class="title">상품주문서</h1>
     <form>
       <fieldset>
         <legend>개인 정보</legend>
-        <label> 이름 <input type="text" placeholder="여백없이 입력" /> </label>
         <label>
-          연락처 <input type="tel" placeholder="연락 가능한 번호" />
+          이름
+          <input type="text" placeholder="여백없이 입력" autofocus required />
+        </label>
+        <label>
+          연락처 <input type="tel" value="010-1234-5678" readonly />
         </label>
       </fieldset>
       <fieldset>
         <legend>주문날짜</legend>
-        <label>
-          <input type="date" />
+        <label> 주문날짜&nbsp;<input type="date" /> </label>
+      </fieldset>
+      <fieldset>
+        <legend>배송지 정보</legend>
+        <label>주소&nbsp;<input type="text" size="40" required /></label>
+        <label>전화번호
+          <input type="tel" required />
+        </label>
+        <label>메모
+          <textarea cols="40" rows="5" placeholder="배송에 관한 요청사항"></textarea>
         </label>
       </fieldset>
       <fieldset>

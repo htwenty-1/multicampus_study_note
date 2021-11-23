@@ -154,28 +154,65 @@
 - `<input />`은 텍스트를 입력하는 상자, 양식에 필요한 도구들을 쓸 수 있게 해준다.
 
 - 각각의 특성에 따른 `<input>`을 써야함에 주의하자!
-  - `input`의 `type`속성으로 `number`, `text`, `email`, `tel`, `search` 등을 쓸 수 있다.
+
+  - `input`의 `type`속성으로 `number`, `text`, `email`, `tel`, `search`, `date`, `time`, `datetime-local` 등을 쓸 수 있다.
+
+  - 단, `datetime-local`을 사용할 때 초기값을 지정하려면 `value`를 `"2021-11-23T09:00"`처럼 지정해줘야 한다.
 
 - `<input type="radio" />`
+
   - 하나만 선택된다
   - 미리 한가지를 체크해두려면 `checked` 옵션을 추가할것
 
 - `<input type="checkbox" />`
+
   - 다중 선택이 가능하다.
   - 체크박스는 `name` value를 각각 다르게 하여 브라우저에서 정보를 전송할 때 혼선이 없게 해야한다.
 
+- `<input />`의 다양한 속성들
+
+  - `readonly` : `value`를 지정하고 적용하면 수정할 수 없음
+  - `placeholder` : 입력란에 입력할 값에 대한 힌트를 줄 수 있음
+  - `autofocus` : 자동으로 커서를 위치시켜줌
+  - `max`: 최대치(`min`은 최소치)
+  - `size`로 입력란의 길이를 조절할 수 있다.
+  - `value`는 `input` 내부에 직접 값을 입력해놓는다.
+
 - 참고사항
-  - `<label />` 태그 
+
+  - `<label />` 태그
     - 방식 1
       - 속성과 값을 넣어준다.
       - 내부에 `<input />`을 넣어준다.
     - 방식 2
       - 다음 방식을 취한다
         ```html
-        <label for="value">내용</label>
-        <input id="value" 속성="값" />
+        <label for="value">내용</label> <input id="value" 속성="값" />
         ```
       - 단, `<label />`의 `for`와 `input`의 `id`는 같아야 한다.
-
   - `<fieldset />` 태그는 영역구분을 해주며 박스를 보여준다.
   - `<legend />`는 `fieldset`의 제목을 보여줄 수 있다.
+  - `<textarea />`는 긴 텍스트를 입력할 수 있는 element를 반환한다.
+
+- `<select />` 태그
+  - 목록으로 보여주는 항목 중에서 하나 또는 여러개를 선택할 수 있도록 함.
+  - `size`를 지정하여 나타낼 옵션들의 개수를 바꿀 수 있음
+  - `multiple`을 지정하여 command 키를 눌러 여러 옵션 선택 가능. 또한 모든 옵션이 전부 보임.
+  - `disable`을 지정하면 비활성화 됨.
+  - `<optgroup>`으로 카테고리를 묶어서 사용할 수 있음
+    ```html
+    <select>
+      <optgroup label="분식집">
+        <option>김밥</option>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+      </optgroup>
+      <optgroup label="중국집">
+        <option>자장면</option>
+        <option>짬뽕</option>
+        <option>탕수육</option>
+        <option>볶음밥</option>
+      </optgroup>
+    </select>
+    ```
