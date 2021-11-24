@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Text Edit Style</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+      * {
+        font-family: Noto Sans KR;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 800;
+        font-style: italic;
+        color: #ffaaff;
+      }
+      .sFont {
+        font-variant: small-caps;
+      }
+      .underDeco {
+        text-decoration: underline;
+      }
+      .sDeco {
+        text-decoration: line-through;
+      }
+      .overDeco {
+        text-decoration: overline;
+      }
+      .trans {
+        text-transform: capitalize;
+      }
+      /* ul > li:nth-child(n) {
+        text-transform: capitalize;
+      } */
+      .trans2 {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Font Family Style 글꼴 스타일</h1>
+    <p>
+      <span class="overDeco">모든 인간</span>은 <span class="underDeco">태어날 때부터 자유로우며</span> 그 존엄과 권리에 있어 동등하다.
+      인간은 천부적으로 이성과 양심을 부여받았으며 서로 형제애의 정신으로 행동하여야 한다.
+      <p><span class="sFont">font-varient</span>는 글자를 작은 <span class="sDeco">대문자</span>로 작성한다.</p>
+    </p>
+    <ul>
+      <li class="trans2">html</li>
+      <li class="trans2">css</li>
+      <li class="trans2">javascript</li>
+    </ul>
+  </body>
+</html>

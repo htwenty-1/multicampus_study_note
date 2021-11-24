@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Class Selector</title>
+    <style>
+      p {
+        color: blue;
+      }
+      .redText {
+        color: red; /* font color is red */
+      }
+      .greenText {
+        font-weight: bold;
+        color: darkgreen;
+      }
+      /* 특정 태그에만 클래스를 쓰고 싶을 때 */
+      h2.accent {
+        background-color: darkgrey;
+        color: rgb(168, 42, 84);
+      }
+      .brownText {
+        color: brown;
+      }
+      .boldText {
+        font-weight: bold;
+      }
+      /* li:nth-child(odd) {
+        color: red;
+      } */
+    </style>
+  </head>
+  <body>
+    <h2 class="accent">class selector practice</h2>
+    <p class="redText">
+      When you want to change style of special part in your web document.
+    </p>
+    <p>you can use the classname <span class="greenText">randomly</span></p>
+    <p>set class <span class="brownText boldText">style</span> above two elements</p>
+
+    <ul>
+      <li class="redText">사과</li>
+      <li>바나나</li>
+      <li class="redText">오렌지</li>
+      <li>감</li>
+    </ul>
+  </body>
+</html>
