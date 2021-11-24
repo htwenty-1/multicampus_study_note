@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Text Style</title>
+    <style>
+      h1 {
+        word-spacing: 0.2em;
+        letter-spacing: 0.5em;
+        text-shadow: 3px 3px 5px #444444, 5px 5px 7px #fd3, 7px 7px 9px #ff0000;
+      }
+
+      /* 왼쪽정렬 */
+      .align-left {
+        text-align: left;
+      }
+
+      /* 오른쪽 정렬 */
+      .align-right {
+        text-align: right;
+      }
+
+      /* 가운데 정렬 */
+      .align-center {
+        text-align: center;
+      }
+
+      /* 양쪽 맞춤 */
+      .align-justify {
+        text-align: justify;
+      }
+
+      /* 단어와 단어 사이 조절 */
+      .textJustify {
+        text-justify: inter-word;
+      }
+
+      /* 글자와 글자 사이 조절 */
+      .textDistribute {
+        text-justify: distribute;
+      }
+
+      /* 문단 간격 좁게 */
+      .s-line {
+        line-height: 0.7em;
+      }
+
+      /* 문단 간격 넓게 */
+      .b-line {
+        line-height: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>텍스트 그림자</h1>
+    <h2>문단 스타일 학습하기</h2>
+    <p class="align-center">문단 스타일</p>
+    <p class="align-left">문단 스타일</p>
+    <p class="align-right">문단 스타일</p>
+    <p class="align-justify textDistribute">
+      문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일
+      문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일
+      문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일 문단 스타일
+    </p>
+    <p class="s-line">
+      문단의 첫 줄을 넘어 두 줄 이상이 되면 '줄 간격'이 생깁니다. 그런데 줄
+      간격은 너무 좁으면 내용이 눈에 잘 들어오지 않습니다.
+    </p>
+    <p class="b-line">
+      문단의 첫 줄을 넘어 두 줄 이상이 되면 '줄 간격'이 생깁니다. 그런데 줄
+      간격은 너무 좁으면 내용이 눈에 잘 들어오지 않습니다.
+    </p>
+  </body>
+</html>
