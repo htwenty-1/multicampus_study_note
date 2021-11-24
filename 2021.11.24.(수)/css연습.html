@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <style>
-    h1 {
-      color: coral;
-    }
-  </style>
-</head>
-<body>
-  <h1>write inner stylesheet</h1>
-  <h2>write outer stylesheet</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 연습</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      h1 {
+        color: coral;
+      }
+      p {
+        color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- head tag 안에 직접 선언함 -->
+    <h1>write inner stylesheet</h1>
+
+    <!-- 외부 스타일 시트를 사용함 -->
+    <h2>write outer stylesheet</h2>
+
+    <hr />
+
+    <!-- 스타일을 엘리먼트 내부에 직접 선언함 -->
+    <h3>write inline style</h3>
+    <p style="color: cornflowerblue">
+      인라인 스타일은 스타일 시트를 사용하지 않고 적용할 대상에 직접 표시하는
+      방법이다.
+    </p>
+    <p>
+      인라인 스타일은 스타일 시트를 사용하지 않고 적용할 대상에 직접 표시하는
+      방법이다.
+    </p>
+    <p>스타일이 적용되는 부분 외에는 기본 스타일 유지</p>
+  </body>
 </html>
