@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>목록 스타일</title>
+    <style>
+      .sqUlList {
+        list-style-type: square;
+      }
+      .ciUlList {
+        list-style-type: circle;
+      }
+      .noUlList {
+        list-style-type: none;
+      }
+      .roOlList {
+        list-style-type: lower-roman;
+      }
+      .imgUl {
+        list-style-image: url('star.png');
+        list-style-position: inside;
+      }
+      #container {
+        width: 50%;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>도서 시리즈</h2>
+      <ul class="imgUl">
+        <li>HTML5</li>
+        <li>하면된다 HTML5</li>
+        <li>재미있는 HTML5</li>
+      </ul>
+    </div>
+    <h2>참고 서적</h2>
+    <ol class="roOlList">
+      <li>나만 모르는 HTML</li>
+      <li>이제 할 수 있다. HTML</li>
+    </ol>
+  </body>
+</html>

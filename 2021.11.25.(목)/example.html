@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 90%;
+        border: 1px solid gray;
+        padding: 1.5em;
+        margin: 0 auto;
+      }
+      .header {
+        border-bottom: 1px solid gray;
+      }
+      .formArea {
+        margin-top: 15px;
+      }
+      .subTitle {
+        display: block;
+        font-weight: 800;
+        padding: 5px;
+      }
+      .nonStyleList {
+        list-style-type: none;
+        list-style-position: inside;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- header -->
+      <div class="header">
+        <h1>프론트엔드 개발자 지원서</h1>
+        <p>
+          HTML, CSS, JavaScript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.
+        </p>
+      </div>
+      <!-- form area -->
+      <div class="formArea">
+        <form>
+          <!-- 개인정보 -->
+          <span class="subTitle">개인정보</span>
+          <ul class="nonStyleList">
+            <li>
+              <label>
+                이름 <input type="text" placeholder="공백없이 입력하세요" />
+              </label>
+            </li>
+            <li>
+              <label>
+                연락처 <input type="tel" />
+              </label>
+            </li>
+          </ul>
+          <!-- 지원분야 -->
+          <span class="subTitle">지원분야</span>
+          <ul class="nonStyleList">
+            <label>
+              <li>
+                <input type="radio" name="apply" value="publishing" /> 웹 퍼블리싱
+              </li>
+            </label>
+            <label>
+              <li>
+                <input type="radio" name="apply" value="appDev" /> 웹 애플리케이션
+                개발
+              </li>
+            </label>
+            <label>
+              <li>
+                <input type="radio" name="apply" value="devEnv" /> 개발 환경 개선
+              </li>
+            </label>
+          </ul>
+          <!-- 지원동기 -->
+          <span class="subTitle">지원동기</span>
+          <label>
+            <textarea
+              cols="50"
+              rows="9"
+              placeholder="본사 지원 동기를 간략히 써주세요."
+            >
+            </textarea>
+          </label>
+          <!-- button area -->
+          <div>
+            <input type="submit" value="접수하기" />
+            <input type="reset" value="다시 쓰기" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
