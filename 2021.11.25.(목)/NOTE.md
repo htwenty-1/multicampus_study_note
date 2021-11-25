@@ -150,3 +150,38 @@
   - 입력 순서
     - `padding: top right bottom left`
     - `padding: top(bottom) right(left)`
+
+<br />
+
+## 배경색상 지정하기
+1. `background-color` : 배경의 색상을 지정함
+2. `background-image` : 배경 이미지 삽입
+  - `background-repeat`: 배경 이미지 반복여부 지정
+     - `repeat`: 반복
+     - `repeat-x`: 가로 반복
+     - `repeat-y`: 세로 반복
+     - `no-repeat`: 반복 안함
+3. `background-size` : 배경 이미지 크기 조절
+  - `auto` : 원래 크기
+  - `cover`: 뷰포트 너비에 맞게 조절
+4. `background-position` : 배경 이미지 위치 조절
+  - `left`, `center`, `right` : 수평
+  - `top`, `center`, `bottom` : 수직
+  - 백분율
+  - 길이 직접 입력
+
+<br />
+
+## block element 위치 조정하기
+  - 왼쪽, 오른쪽 정렬은 `float` 속성을 사용
+  - 가운데 정렬은 `margin`을 `0 auto`로 지정
+  - HTML의 모든 요소들, 특히 block 요소들은 좌상단으로부터 쌓이는 구조이기 때문에 이 구조를 깨고자 할 때 `float`를 사용하게 된다.
+  - `float`의 속성
+    - `left`: 왼쪽으로
+    - `right`: 오른쪽으로
+  - `float` 속성 해제하기
+    - `clear`를 사용한다.
+      - `clear`의 속성에는 `left`, `right`, `both`가 있음.
+         - `left` : `float: left`를 해제함
+         - `right` : `float: right`를 해제함
+         - `both` : `float: left`와 `float: right` 모두를 해제함.
