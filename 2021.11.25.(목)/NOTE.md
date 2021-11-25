@@ -110,3 +110,43 @@
       list-style-position: inside;
     }
     ```         
+<br />
+
+---
+
+<br />
+
+## 여백 지정 하기
+1. 박스모델
+  - 실제 컨텐츠 영역, padding. border, margin의 요소로 구성됨.
+  - `padding` : 컨텐츠 내부 영역
+  - `border` : 테두리
+  - `margin` : 컨텐트 바깥 영역
+
+2. `border`의 속성들
+  - 각 방향에 따라: `border-top`, `border-bottom`, `border-left`, - `border-right`
+  - 기본은 `border`
+  - `border-radius`에 값을 지정해주면 곡률이 있는 박스를 만들 수 있음.
+    - `border-top-left-radius`처럼 일부분의 곡률만 변경할 수도 있다.
+  - `box-shadow` 박스에 그림자를 넣어줌
+    ```css
+    div {
+      box-shadow: 수평거리 수직꺼리 흐림정보 번짐정도 색상
+    }
+    ```
+  - `border-style`로 선의 모양을 바꾼다.
+    - `solid` 실선
+    - `dashed` 직전으로 된 점선
+    - `dotted` 완전 점선
+  - `border-color` 테두리의 색상을 바꿔줌.
+
+3. `margin` : 요소 주변의 여백을 설정
+  - 입력 순서
+    - `margin: top right bottom left`
+    - `margin: top(bottom) right(left)`
+  - `margin`의 위 아래 여백은 중첩이 된다. 좌우 여백은 떨어뜨릴 수 있지만...
+
+4. `padding` : 컨텐츠 영역과 테두리 사이 여백
+  - 입력 순서
+    - `padding: top right bottom left`
+    - `padding: top(bottom) right(left)`

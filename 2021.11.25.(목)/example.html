@@ -31,6 +31,7 @@
   </head>
   <body>
     <div id="container">
+
       <!-- header -->
       <div class="header">
         <h1>프론트엔드 개발자 지원서</h1>
@@ -38,6 +39,7 @@
           HTML, CSS, JavaScript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.
         </p>
       </div>
+
       <!-- form area -->
       <div class="formArea">
         <form>
@@ -55,6 +57,7 @@
               </label>
             </li>
           </ul>
+
           <!-- 지원분야 -->
           <span class="subTitle">지원분야</span>
           <ul class="nonStyleList">
@@ -75,23 +78,35 @@
               </li>
             </label>
           </ul>
+
           <!-- 지원동기 -->
           <span class="subTitle">지원동기</span>
           <label>
             <textarea
-              cols="50"
-              rows="9"
+              cols="52"
+              rows="27"
               placeholder="본사 지원 동기를 간략히 써주세요."
-            >
-            </textarea>
+            ></textarea>
           </label>
+
           <!-- button area -->
           <div>
-            <input type="submit" value="접수하기" />
+            <!-- <input type="submit" value="접수하기" /> -->
+            <button type="submit">제출?</button>
             <input type="reset" value="다시 쓰기" />
           </div>
+
+          <div>
+            <label> <span>파일첨부</span>
+              <input type="file" />
+              <input type="image" src="./star.png" alt="star" width="20" />
+            </label>
+          </div>
+
         </form>
+
       </div>
     </div>
+    
   </body>
 </html>
