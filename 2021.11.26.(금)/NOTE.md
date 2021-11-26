@@ -262,9 +262,19 @@
     |`over-flow-x: auto`|너비 자동|
     |`over-flow-y: auto`|높이 자동|
 
+<br />
+
+---
+
+<br />
+
+## 보이기 속성
+
 - `visibility`: 요소를 보이게 하거나 보이지 않게함
   
   |구분|해설|
   |--|---|
   |`visible`|보이기|
   |`hidden`|숨김|
+
+- `display` : 요소의 `inline`, `block`, `inline-block`, `flex` 등의 속성을 지정해 줄 수 있다.
