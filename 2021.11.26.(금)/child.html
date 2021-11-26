@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>child</title>
+    <style>
+      /*부모가 hearder일 때 h1, h2, div, ul은 자식이기 때문에 속성을 물려 받는다.*/
+      #header > h2 {
+        color: coral;
+      }
+
+      /* 부모가 section일 때 li는 부모가 다르기 때문에 속성을 물려 받을 수 없다. */
+      #section > h1 {
+        color: crimson;
+      }
+
+      /* 후손 선택자에서 부모가 header일 때 손자인 li는 상속을 받는다. */
+      #header li {
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>첫째</h1>
+      <div id="section">
+        <h1>손자</h1>
+      </div>
+      <h2>둘째</h2>
+      <ul>
+        <li>첫째 손자</li>
+        <li>둘째 손자</li>
+        <li>셋째 손자</li>
+      </ul>
+    </div>
+    <h1>가족 외</h1>
+  </body>
+</html>
+
