@@ -77,6 +77,33 @@
         font-weight: 800;
         cursor: pointer;
       }
+      /* Main Article */
+      #contents { overflow: hidden; }
+      #mainSection { width: 710px; float: left; }
+      article {
+        padding: 0 10px 20px 10px;
+        border-bottom: 1px solid #c8c8c8;
+      }
+      .articleHeader { padding: 20px 0; }
+      .articleTitle {
+        font-size: 25px;
+        font-weight: 500px;
+        padding-bottom: 10px;
+      }
+      .articleDate { font-size: 13px; }
+      .articleBody { font-size: 14px; }
+      img {
+        display: block;
+        margin-bottom: 17.83px;
+      }
+      /* aside */
+      #mainAside { float: right; width: 200px; }
+      .asideList { padding: 10px 0 30px 0; }
+      /* footer */
+      #footer {
+        margin: 40px 0;
+        background: rgba(100, 100, 100, .3);
+      }
     </style>
   </head>
   <body>
@@ -108,24 +135,70 @@
           </div>
         </div>
       </nav>
-      <div>
-        <section>
+      <div id="contents">
+        <section id="mainSection">
           <article>
-            <div>
-              <h1>HTML5の概要および活用</h1>
-              <p>HTML文書の作成日は２０２１年１１月２９日である。</p>
+            <div class="articleHeader">
+              <h1 class="articleTitle">HTML5の概要および活用</h1>
+              <p class="articleDate">HTML文書の作成日は２０２１年１１月２９日である。</p>
             </div>
-            <div>
+            <div class="articleBody">
+              <img src="http://placehold.it/430x280" alt="html_image">
               <p>
-                HyperText Markup Language（ハイパーテキスト マークアップ ランゲージ）は、ハイパーテキストを記述するためのマークアップ言語の1つ。略してHTML（エイチティーエムエル）と呼ばれることが多い。SGMLを元に開発された。World Wide Web（WWW）において、ウェブページを表現するために用いられる。ハイパーリンクや画像等のマルチメディアを埋め込むハイパーテキストとしての機能、見出しや段落といったドキュメントの抽象構造、フォントや文字色の指定などの見た目の指定、などといった機能がある。2019年6月以降、WHATWG により仕様が作られ、それがW3C勧告となる流れになっている。
-            </p>
+                HTMLは木構造（入子構造）のマークアップ言語であり、形式言語である。「プレーンテキストの文書を要素で括って意味付け」という一般的な説明は間違いである。「『タグ』と『タグ』で括られたもの全体」が「要素」（element）であり、タグすなわち要素ではない。マークアップ言語としての特徴は、先祖であるSGMLや、兄弟のXMLと共通しているため、以下ではWWWというシステムにおける「ハイパーテキスト記述言語」としての側面についてのみ記述する。
+              </p>
+              <p>
+                HTMLの要素には、文書を表現するものとしてごく一般的なものである見出し（ヘッドライン、h1〜 ）、段落（パラグラフ、p ）、ハイパーテキストとして特徴的な「アンカー」（ a ）に関係するもの、画像など（ img など）の電子メディア的なもの、などがある。また文字色の指定などといった、意味ではなく直接見た目のみを指定するようなものは、近年ではスタイルシートなどに分離するべきとされているが、歴史的事情、及び、スタイルシートよりもこの、HTMLでの記述が簡便になる場合が度々あることから現在でもしばしば使われている。その他主要な要素は、HTMLの要素の記事で解説している。
+              </p>
+              <p>
+                形式言語として見た場合「構文規則」（あるいは文法）に相当する「スキーマ」は、HTML4まではDTDとして公開され要素ごとに記載することの出来る属性、内容に含むことの出来る要素などが定められていた。HTML 4.01 では厳密なもの、HTML 3.2 からの移行過渡期のためのもの、フレームを用いた文書のためのものといった3つのDTDが定義されていた。
+              </p>
             </div>
           </article>
-          <article></article>
+          <article>
+            <div class="articleHeader">
+              <h1 class="articleTitle">HTML5の概要および活用</h1>
+              <p class="articleDate">HTML文書の作成日は２０２１年１１月２９日である。</p>
+            </div>
+            <div class="articleBody">
+              <img src="http://placehold.it/430x280" alt="html_image">
+              <p>
+                HTMLは木構造（入子構造）のマークアップ言語であり、形式言語である。「プレーンテキストの文書を要素で括って意味付け」という一般的な説明は間違いである。「『タグ』と『タグ』で括られたもの全体」が「要素」（element）であり、タグすなわち要素ではない。マークアップ言語としての特徴は、先祖であるSGMLや、兄弟のXMLと共通しているため、以下ではWWWというシステムにおける「ハイパーテキスト記述言語」としての側面についてのみ記述する。
+              </p>
+              <p>
+                HTMLの要素には、文書を表現するものとしてごく一般的なものである見出し（ヘッドライン、h1〜 ）、段落（パラグラフ、p ）、ハイパーテキストとして特徴的な「アンカー」（ a ）に関係するもの、画像など（ img など）の電子メディア的なもの、などがある。また文字色の指定などといった、意味ではなく直接見た目のみを指定するようなものは、近年ではスタイルシートなどに分離するべきとされているが、歴史的事情、及び、スタイルシートよりもこの、HTMLでの記述が簡便になる場合が度々あることから現在でもしばしば使われている。その他主要な要素は、HTMLの要素の記事で解説している。
+              </p>
+              <p>
+                形式言語として見た場合「構文規則」（あるいは文法）に相当する「スキーマ」は、HTML4まではDTDとして公開され要素ごとに記載することの出来る属性、内容に含むことの出来る要素などが定められていた。HTML 4.01 では厳密なもの、HTML 3.2 からの移行過渡期のためのもの、フレームを用いた文書のためのものといった3つのDTDが定義されていた。
+              </p>
+            </div>
+          </article>
         </section>
-        <aside></aside>
+        <aside id="mainAside">
+          <div class="asideList">
+            <h3>キーワード</h3>
+            <ul>
+              <li>data</li>
+              <li>data</li>
+              <li>data</li>
+              <li>data</li>
+              <li>data</li>
+            </ul>
+          </div>
+          <div class="asideList">
+            <h3>最新ニュース</h3>
+            <ul>
+              <li>データー</li>
+              <li>データー</li>
+              <li>データー</li>
+              <li>データー</li>
+            </ul>
+          </div>
+        </aside>
       </div>
-      <footer></footer>
+      <footer id="footer">
+        作成者：マルチ・キャンパス（MultiCampus）
+      </footer>
     </div>
   </body>
 </html>
