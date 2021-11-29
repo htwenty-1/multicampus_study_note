@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Writing Practice</title>
+    <style>
+      /* common */
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      li { list-style-type: none; }
+      .floatLeft { float: left; }
+      .floatRight { float: right; }
+      /* ページ構成 */
+      body {
+        width: 960px;
+        margin: 0 auto;
+        background-color: #e6e6e6;
+      }
+      #wrapper {
+        background-color: #ffffff;
+        margin: 40px 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+      }
+      /* headerの構成 */
+      #mainHeader { padding: 40px 50px; }
+      .mainTitle { font-size: 30px; color: chocolate; }
+      .mainDescription {
+        font-size: 15px;
+        font-weight: 500;
+        color: #ff9999;
+      }
+      /* navの構成 */
+      #mainNav {
+        border-top: 1px solid #c8c;
+        border-bottom: 1px solid #c8c;
+        margin-bottom: 20px;
+        height: 40px;
+      }
+      .outerMenuItem { float: left; position: relative; }
+      .outerMenuItem:hover {
+        background-color: #e6e6e6;
+        cursor: pointer;
+      }
+      .menuTitle {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        padding: 5px 20px;
+      }
+      .searchBar { height: 20px; padding: 7px; }
+      .inputSearch {
+        background-color: #ffffff;
+        border: 1px solid #c8c;
+        border-radius: 15px 0 0 15px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        width: 150px;
+        height: 24px;
+        padding: 0 0 0 10px;
+        font-size: 12px;
+      }
+      .inputSearchSubmit {
+        width: 50px;
+        height: 26px;
+        border-radius: 0 15px 15px 0;
+        border: 2px solid #c8c;
+        background-color: #c5c;
+        color: #ffffff;
+        font-weight: 800;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="mainHeader">
+        <hgroup>
+          <h1 class="mainTitle">HTML5の作成方法</h1>
+          <h2 class="mainDescription">作成日: 2021年 11月 29日</h2>
+        </hgroup>
+      </header>
+      <nav id="mainNav">
+        <div class="floatLeft">
+          <ul>
+            <li class="outerMenuItem">
+              <span class="menuTitle">HTML5</span>
+            </li>
+            <li class="outerMenuItem"><span class="menuTitle">CSS3</span></li>
+            <li class="outerMenuItem">
+              <span class="menuTitle">JavaScript</span>
+            </li>
+          </ul>
+        </div>
+        <div class="floatRight">
+          <div class="searchBar">
+            <form>
+              <input type="text" class="inputSearch" autofocus />
+              <input type="submit" value="検索" class="inputSearchSubmit" />
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <section>
+          <article>
+            <div>
+              <h1>HTML5の概要および活用</h1>
+              <p>HTML文書の作成日は２０２１年１１月２９日である。</p>
+            </div>
+            <div>
+              <p>
+                HyperText Markup Language（ハイパーテキスト マークアップ ランゲージ）は、ハイパーテキストを記述するためのマークアップ言語の1つ。略してHTML（エイチティーエムエル）と呼ばれることが多い。SGMLを元に開発された。World Wide Web（WWW）において、ウェブページを表現するために用いられる。ハイパーリンクや画像等のマルチメディアを埋め込むハイパーテキストとしての機能、見出しや段落といったドキュメントの抽象構造、フォントや文字色の指定などの見た目の指定、などといった機能がある。2019年6月以降、WHATWG により仕様が作られ、それがW3C勧告となる流れになっている。
+            </p>
+            </div>
+          </article>
+          <article></article>
+        </section>
+        <aside></aside>
+      </div>
+      <footer></footer>
+    </div>
+  </body>
+</html>
