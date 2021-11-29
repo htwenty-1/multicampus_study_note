@@ -67,6 +67,9 @@
         padding: 0 0 0 10px;
         font-size: 12px;
       }
+      .inputSearch:focus {
+        outline: 2px solid rgba(246, 154, 249, 0.57);
+      }
       .inputSearchSubmit {
         width: 50px;
         height: 26px;
@@ -103,6 +106,9 @@
       #footer {
         margin: 40px 0;
         background: rgba(100, 100, 100, .3);
+        font-size: 12px;
+        text-align: center;
+        font-weight: 700;
       }
     </style>
   </head>
@@ -129,7 +135,7 @@
         <div class="floatRight">
           <div class="searchBar">
             <form>
-              <input type="text" class="inputSearch" autofocus />
+              <input type="text" class="inputSearch" placeholder="Search with Google" autofocus />
               <input type="submit" value="検索" class="inputSearchSubmit" />
             </form>
           </div>
@@ -197,7 +203,7 @@
         </aside>
       </div>
       <footer id="footer">
-        作成者：マルチ・キャンパス（MultiCampus）
+        &copy; マルチ・キャンパス（MultiCampus） 2021
       </footer>
     </div>
   </body>
