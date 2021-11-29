@@ -102,3 +102,108 @@
       <img src="images/shop.jpg" style="width: 100%">
     </picture>
     ```
+
+<br>
+
+## 미디어 쿼리
+
+---
+
+### 미디어 쿼리란?
+- 미디어가 표시되는 장치에 따라 반응하도록 함.
+- 규칙: `@media(<mediaQuery>) { css style }`
+- 연산자
+
+  |구분|의미|
+  |---|---|
+  |`and`|여러 조건을 연결해서 추가할 때|
+  |`print`|프린터|
+  |`screen`|화면|
+  |`handheld`|손으로 들고다니는 장치|
+  |`not`|해당 장치를 제외한|
+  |`only`|해당 장치에서만|
+  |`,`| 동일한 스타일 유형을 사용할 미디어의 유형과 조건이 있을 때|
+
+- 미디어 쿼리의 다양한 조건
+
+  |종류|설명|
+  |---|---|
+  |`width`, `height`|웹 페이지의 가로, 세로 너비와 높이|
+  |`min-width`, `min-height`|웹 페이지의 가로, 세로 최소 너비와 높이|
+  |`max-width`, `max-height`|웹 페이지의 가로, 세로 최대 너비 높이|
+  |`device-width`, `device-height`|단말기의 너비, 높이|
+  |`min-device-width`, `min-device-height`|단말기의 최소 너비, 높이|
+  |`max-device-width`, `max-device-height`|단말기의 최대 너비, 높이|
+  |`orientation: portrait`|단말기의 세로모드|
+  |`orientation: landscape`|단말기의 가로모드|
+
+- 미디어 쿼리를 적용하기
+  - 외부 CSS 파일 연결(가장 많이 쓰는 방법)
+    `@import url(css파일 경로) 미디어 쿼리 조건`
+
+- 미디어 쿼리의 중단점
+  - 서로 다른 css를 적용할 화면 크기
+
+<br>
+
+## 플렉스 박스
+
+---
+
+### 개요
+- 그리드 레이아웃을 기준으로 플렉스 박스를 원하는 위치에 배치하는 것.
+- 여유 공간에 따라 너비나 높이, 위치를 자유롭게 변형할 수 있다.
+
+<br>
+
+### `display` 속성
+
+|구분|의미|
+|---|---|
+|`flex`|컨테이너 안의 플렉스 항목을 블록 레벨 요소로 배치;|
+|`inline-flex`|컨테이너 안의 플렉스 항목을 인라인 레벨 요소로 배치;|
+
+<br>
+
+### `flex-direction` 속성
+
+|구분|의미|
+|---|---|
+|`row`|주축을 가로로 지정. 왼쪽에서 오른족으로. 기본값.|
+|`row-reverse`|주축을 가로로 지정 오른쪽에서 왼쪽으로|
+|`column`|주축을 세로로 지정. 위에서 아래로.|
+|`column-reverse`|주축을 세로로 지정. 아래에서 위로.|
+
+<br>
+
+### `flex-wrap` 속성
+
+|구분|의미|
+|---|---|
+|`nowrap`|기본값|
+|`wrap`|여러줄로 표시해줌|
+|`wrap-reverse`|wrap과 반대순서. 여러줄을 역방향으로 표시해줌.|
+
+<br>
+
+### `order` 속성
+- `flex` 항목의 배치 순서를 바꾼다.
+- `order: N`을 선언하여 순서를 바꿔줄 수 있음.
+
+<br>
+
+### `flex` 속성
+- `flex: 늘릴 비율, 줄일 비율, 기본값`의 순서로 입력한다.
+  - 기본값: `flex: 1 1 0;`
+
+<br>
+
+### `flex` 항목 배치를 위한 속성
+
+|구분|의미|
+|---|---|
+|`flex-start`|Items를 시작점(flex-start)으로 정렬, 기본값|
+|`flex-end`|Items를 끝점(flex-end)으로 정렬|
+|`center`|Items를 가운데 정렬|
+|`space-between`|시작 Item은 시작점에, 마지막 Item은 끝점에 정렬되고 나머지 Items는 사이에 고르게 정렬됨|
+|`space-around`|Items를 균등한 여백을 포함하여 정렬|
