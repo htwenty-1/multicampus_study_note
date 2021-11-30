@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Tutorial 2</title>
-</head>
-<body>
-  <h1>JavaScript First Challenge</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tutorial 2</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to code JavaScript?</h1>
 
-  <script>
-    var name = prompt("What's your name?");
-    document.write(`<b>${name}</b>님, 환영합니다.`);
-  </script>
-</body>
+    <script>
+      var name = prompt('Name?');
+      document.write(name + '님, 환영합니다!');
+      var age = prompt('나이를 입력하세요');
+      document.write('<br>' + age + '살 입니다!');
+      // 템플릿 리터럴을 사용하는 방법
+      // document.write(`${name}님, 환영합니다!`);
+      // document.write(`<br> ${age}살 입니다!`);
+    </script>
+  </body>
 </html>
