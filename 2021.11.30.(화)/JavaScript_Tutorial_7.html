@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tutorial 7</title>
+  </head>
+  <body>
+    <script>
+      var date = new Date();
+      var month = date.getMonth() + 1;
+
+      if (month <= 3) {
+        alert('방학');
+      } else {
+        if (month <= 7) {
+          alert('학기중');
+        } else {
+          if (month <= 10) {
+            alert('휴가중');
+          } else {
+            alert('연수중');
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
