@@ -251,11 +251,56 @@ switch(조건) {
 ### 반복문
 
 1. `for`
+```javascript
+for(초기값_지정; 조건식; 조건에_맞다면_전개(대부분_증감_연산자)) {
+  반복할 구문
+}
+```
 
 2. 중첩 `for`
+- for문 안에 for문을 쓸 수 있다.
+  ```javascript
+  for (var j = 0; j < 5; j++) {
+    for (var i = 0; i < 10; i++) {
+      document.write('*');
+    }
+    document.write('<br>');
+  }
+  ```
 
 3. `while`
+- 가장 기본적인 반복문이다.
+- `if` 조건문과 비슷할 수 있지만 `boolean`이 `true`이면 계속 실행한다.
+  ```javascript
+  while (조건) {
+    조건이 참일 때 반복할 문장
+  }
+  ```
 
 4. `do...while`
+- 문장을 한번 실행한 후 조건을 확인한다.
+  ```javascript
+  var i = 0;
+  do {
+    document.write("무조건 한번 실행 <br>");
+    i += 1;
+  } while (i<10);
+  ```
 
 5. `break`, `continue`
+- `break`: 반복구문에서 반복을 멈춘다! `break`가 있는 지점에 도달하면 바로 반복문 종료!!
+  ```javascript
+  for (var i=0; i<10; i++) {
+    document.write("반복합니다~!");
+    break;  // 1회만 출력 후 종료
+  }
+  ```
+
+- `continue` : 주어진 조건에 맞는 값을 만났을 때 실행하던 반복문장을 건너 뛰고 반복문 맨 앞으로 되돌아 갈 때 사용한다!
+  ```javascript
+  for (var i=0; i<10; i++) {
+    document.write("반복");
+    continue; // 반복만 10회 출력되고 멈춤!
+    document.write("실행하고 싶어ㅜㅜ~");
+  }
+  ```
