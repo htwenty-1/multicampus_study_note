@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review2</title>
+  </head>
+  <body>
+    <script>
+      // 논리 연산자 사용해서 계절 나타내기
+      var date = new Date();
+      var month = date.getMonth() + 1;
+      var promptMonth = prompt('몇월인가요?', month);
+      if (promptMonth < 1 || month > 12) {
+        document.write('잘못된 입력');
+      } else if (promptMonth >= 3 && promptMonth <= 5) {
+        document.write(`${promptMonth}월, 봄입니다!`);
+      } else if (promptMonth >= 6 && promptMonth <= 8) {
+        document.write(`${promptMonth}월, 여름입니다!`);
+      } else if (promptMonth >= 9 && promptMonth <= 11) {
+        document.write(`${promptMonth}월, 가을입니다!`);
+      } else {
+        document.write(`${promptMonth}월, 겨울입니다!`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review</title>
+</head>
+<body>
+  <script>
+    const price = prompt("개당 가격? 반드시 숫자만 입력", 1500);
+    const count = prompt("구매 수량? 반드시 숫자만 입력", 3);
+    const have = prompt("지불 금액? 반드시 숫자만 입력", 10000);
+    const exchange = have-price*count;
+    document.write("개당 가격은&nbsp;" + price + "원이고 <br>");
+    document.write("구매 수량은&nbsp;" + count + "개이고 <br>");
+    document.write("지불 금액은&nbsp;" + have + "원이고 <br>");
+    document.write("거스름돈은&nbsp;" + exchange + "원입니다. <br>");
+  </script>
+</body>
+</html>
