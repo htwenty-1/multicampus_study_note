@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Example</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function Car(name, company, minPrice, boarding) {
+        this.name = name; // 이름
+        this.company = company; // 제조사
+        this.minPrice = minPrice; // 깡통가격
+        this.boarding = boarding; // 탑승인원수
+      }
+
+      var sonata = new Car('Sonata', 'Hyundai', 2547, 5);
+
+      var today = new Date();
+
+      document.write(`차량이름: ${sonata.name} <br/>`);
+      document.write(`제조사: ${sonata.company} <br/>`);
+      document.write(`깡통가격: ${sonata.minPrice}만원 <br/>`);
+      document.write(`탑승인원수: ${sonata.boarding}인승 <br/>`);
+      document.write(
+        `${today.getFullYear()}년
+         ${today.getMonth() + 1}월
+         ${today.getDate()}일 기준
+        `
+      );
+
+      var b1 = {
+        model: 'Sonata',
+        year: 2021,
+        company: '현대자동차',
+      };
+
+      var a1 = '';
+      for(var i in b1) {
+        a1 += `${b1[i]} <br/>`
+      }
+      document.write(a1);
+    </script>
+  </body>
+</html>
