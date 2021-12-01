@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Tutorial 1</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var person = {
+        name: 'Marco Polo',
+        age: 20,
+        area: 'Rome',
+      };
+
+      document.write(`Name: ${person.name} <br/>`);
+      document.write(`Age : ${person.age} <br/>`);
+      document.write(`Area: ${person.area} <br/><br/>`);
+
+      var textbook = {
+        name: 'HTML5 웹 프로그래밍 입문 3판',
+        author: '윤인성',
+        publisher: '한빛 아카데미',
+        price: 26000,
+        mainPhoto: '귀여운 고양이',
+        color: '살구색'
+      }
+      document.write(`이 책의 이름은 ${textbook.name}입니다. <br/>`);
+      document.write(`저자는 ${textbook.author}씨이고, 출판사는 ${textbook.publisher}네요! <br/>`);
+      document.write(`가격은 ${textbook.price}원이고, <br/>`);
+      document.write(`겉표지에는 ${textbook.mainPhoto}가 그려져 있어요! <br/>`);
+      document.write(`책의 색깔은 ${textbook.color}이네요!! <br/><br/>`);
+
+    </script>
+  </body>
+</html>

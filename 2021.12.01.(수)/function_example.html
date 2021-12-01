@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function example</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function price(bookPrice, discount, fee) {
+        return bookPrice * (1 - discount) + fee;
+      }
+      var bPrice = 26000;
+      var bDis = 0.1;
+      var bFee = 3000;
+
+      var result = price(bPrice, bDis, bFee);
+      document.write(result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Tutorial 2</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var today = new Date();
+      var nowMonth = today.getMonth() + 1;
+      var nowDate = today.getDate();
+      var nowDay = today.getDay();
+      
+      function dayToString (n) {
+        if (n === 0) return '일';
+        else if (n === 1) return '월';
+        else if (n === 2) return '화';
+        else if (n === 3) return '수';
+        else if (n === 4) return '목';
+        else if (n === 5) return '금';
+        else if (n === 6) return '토';
+      };
+      document.write(`오늘 날짜와 시간: ${today} <br/>`);
+      document.write(`오늘은 몇월? ${nowMonth}월 <br/>`);
+      document.write(`오늘은 며칠? ${nowDate}일 <br/>`);
+      document.write(`오늘은 몇요일? ${dayToString(nowDay)}요일~`);
+
+      var num = 1.2345;
+      var roundNum = Math.round(num);
+      var floorNum = Math.floor(num);
+
+      document.write(roundNum);
+      document.write(floorNum);
+    </script>
+  </body>
+</html>

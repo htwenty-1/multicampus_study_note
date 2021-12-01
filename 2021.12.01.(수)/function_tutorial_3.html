@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function tutorial 3</title>
+</head>
+<body>
+  <script>
+    // function add (a, b) {
+    //   var c = a + b;
+    //   return c;
+    // }
+
+    // var value;
+    // value = add(5, 7);
+    // document.write(`${value} <br/>`)
+
+    // value = add(10, 7);
+    // document.write(`${value} <br/>`)
+
+    ///////
+
+    // var num1 = 5;
+    // var num2 = 10;
+    // var result = mulNum(num1, num2);
+    // document.write(result)
+
+    // function mulNum (n1, n2) {
+    //   var n3 = n1 *n2;
+    //   return n3;
+    // }
+
+    ///
+
+    function circleWidth (r) {
+      return r*r*3.14;
+    }
+    
+    function circleCircum (r) {
+      return r*2*3.14;
+    }
+
+    var r = 30;
+    var width = circleWidth(r);
+    var circum = circleCircum(r);
+
+    document.write(`원의 반지름은 ${r}cm 입니다.<br/>`)
+    document.write(`원의 넓이는 ${width}cm<sup>2</sup> 입니다.<br/>`)
+    document.write(`원의 둘레는 ${circum}cm 입니다.<br/>`)
+  </script>
+</body>
+</html>
