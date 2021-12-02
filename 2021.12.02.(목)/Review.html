@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // function addNum(p, q) {
+      //   return p*q;
+      // }
+      // document.write(addNum(2, 5));
+      
+      // var length = prompt("길이를 cm 단위로 입력하세요!", 1);
+      // function toInchAndFeet () {
+      //   var toInch = length / 2.54;
+      //   var toFeet = toInch / 12;
+      //   document.write(`${length}cm는 ${toInch}inch이며 ${toFeet}feet 입니다!`)
+      // }
+      // toInchAndFeet(length);
+
+      var book1 = {
+        name: "C# 프로그래밍(2판)",
+        initialPub: "2019년 12월 10일",
+        author: "윤인성",
+        pulisher: "김태헌",
+        company: "한빛아카데미(주)",
+        producer: "변소현",
+        plan: "김성무",
+        edit: "김성무",
+        designer: "김연정",
+      }
+
+      // 또는
+
+      function Book (name, initialPub, author, publisher, company, producer, plan, edit, designer) {
+        this.name = name;
+        this.initialPub = initialPub;
+        this.author = author;
+        this.publisher = publisher;
+        this.company = company;
+        this.producer = producer;
+        this.plan = plan;
+        this.edit = edit;
+        this.designer = designer;
+      }
+      var book2 = new Book("C# 프로그래밍(2판)", "2019년 12월 10일", "윤인성", "김태헌", "한빛아카데미(주)", "변소현", "김성무", "김성무", "김연정");
+    </script>
+  </body>
+</html>

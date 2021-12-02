@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Tutorial 3</title>
+</head>
+<body>
+  <div>
+    <h1>책값을 계산해보자~</h1>
+    <ul>
+      <li>책 값: <span id="price"></span>원</li>
+      <li>할인율: <span id="disc"></span>%</li>
+      <li>배송료: <span id="fee"></span>원</li>
+    </ul>
+    <button onclick="priceCal(26000, 10, 3000)">지불할 금액</button>
+    <div>지불할 금액은 <span id="result"></span>원입니다.</div>
+  </div>
+
+  <script>
+    function priceCal (price, disc, fee) {
+      var p = (price * ((100-disc) / 100)) + fee
+      document.getElementById('price').innerHTML = price;
+      document.getElementById('disc').innerHTML = disc;
+      document.getElementById('fee').innerHTML = fee;
+      document.getElementById('result').innerHTML = p;
+    }
+  </script>
+</body>
+</html>

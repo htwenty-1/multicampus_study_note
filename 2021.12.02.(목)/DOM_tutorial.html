@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Tutorial</title>
+    <style>
+      #container {
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        padding: 20px 10px 0 50px;
+        border: 1px solid #ff5500;
+      }
+      #title {
+        border-bottom: 5px double #008800;
+        text-align: center;
+        font-size: 2em;
+      }
+      #pimage {
+        margin: 20px 50px;
+      }
+      #pimage img {
+        border: 1px solid #ff5000;
+      }
+      #desc {
+        width: 300px;
+      }
+      #pimage,
+      #desc {
+        float: left;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.3em;
+        color: blue;
+      }
+      p {
+        font-size: 0.9em;
+        line-height: 1.4em;
+      }
+
+      .accent {
+        font-weight: 700;
+        font-size: 1.1em;
+        font-style: italic;
+      }
+      .bright {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="title">커피의 기원</h1>
+      <div id="pimage">
+        <img src="../2021.11.29.(월)/images/1.jpg" />
+      </div>
+      <div id="desc">
+        <h2>Information</h2>
+        <p>
+          독특한 풍미를 가진 갈색에 가까운 기호 음료이다.
+          <span class="accent"
+            >커피나무 열매(Cherry)속의 씨앗(생두, Green Bean)을 볶고(원두,
+            Coffee Bean), 물</span
+          >을 이용하여 그 성분을 추출하여 만든다. 어원은 아랍어인
+          카파(Caffa)로서 힘을 뜻하며,
+          <span class="accent">에티오피아의 산악지대</span>에서 기원한 것으로
+          알려져 있다.
+        </p>
+        <p>
+          1896년 아관파천으로 고종황제가 러시아 공관에 머물 당시, 초대 러시아
+          공사였던 웨베르의 처형인 손탁으로부터 커피를 접한 고종은 이후 커피
+          애호가가 되었다고 전해진다. 이후 1902년에 손탁 호텔(Sontag Hotel)안에
+          정동구락부라는 우리나라 최초의 다방이 생겼으며, 한국전쟁을 계기로
+          미군을 통해 인스턴트 커피가 일반인들에게 유통되기 시작하였다.
+        </p>
+        <h2>커피의 역사</h2>
+        <p class="bright">コーヒーは大昔から飲まれはじめた。</p>
+      </div>
+    </div>
+
+    <script>
+      // document.getElementById('desc').onclick = function () {
+      //   this.style.fontSize="5em";
+      // }
+
+      document.getElementById('title').onclick = function () {
+        this.style.fontSize = '3.5em';
+      };
+
+      document.getElementsByClassName('accent')[0].style.textDecoration =
+        'underLine';
+
+      document.getElementsByClassName('accent')[1].style.textDecoration =
+        'underLine';
+
+      document.getElementsByTagName('h2')[0].style.backgroundColor = '#efefef';
+
+      document.getElementsByTagName('p')[0].style.border = '1px solid black';
+
+      document.querySelector('#title').style.color = '#0099ff';
+
+      document.querySelectorAll('.accent')[1].style.color = '#00ff77';
+
+      /* HTML 개체 변경해주기*/
+
+      document.querySelector("#pimage>img").setAttribute("src", "../2021.11.29.(월)/images/2.jpg")
+
+    </script>
+  </body>
+</html>
