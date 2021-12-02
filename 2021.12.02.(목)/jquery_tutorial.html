@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Tutorial</title>
+  </head>
+  <body>
+    <p>JavaScript</p>
+    <p>jQuery</p>
+    <button>확인</button>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("p").css("color", "red");
+        });
+      });
+      // $(document) = 페이지를 나타내는 jQuery 객체 생성
+      // $(function () {
+      //   $('button').click(function () {
+      //     $('p').css('color', 'red');
+      //   });
+      // });
+    </script>
+  </body>
+</html>

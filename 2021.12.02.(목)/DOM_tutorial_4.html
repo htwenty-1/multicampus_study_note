@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Tutorial 4</title>
+  </head>
+  <body>
+    <div>
+      <img src="../2021.11.29.(월)/images/1.jpg" id="cover" />
+    </div>
+    <button id="btn">onClick!!</button>
+    <script>
+      var coverImg = document.getElementById('cover');
+      coverImg.onclick = function () {
+        alert('눌렸음!');
+      };
+      coverImg.onmouseover = function () {
+        coverImg.style.border = '10px solid red';
+      };
+
+      let btn = document.getElementById('btn');
+      btn.onclick = function () {
+        alert('버튼 눌렀다~~~!!');
+      };
+    </script>
+  </body>
+</html>

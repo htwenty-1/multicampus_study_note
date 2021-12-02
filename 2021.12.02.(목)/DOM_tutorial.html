@@ -52,13 +52,22 @@
       .bright {
         color: blue;
       }
+      .small {
+        width: 60px;
+        height: 60px;
+      }
     </style>
   </head>
   <body>
     <div id="container">
       <h1 id="title">커피의 기원</h1>
       <div id="pimage">
-        <img src="../2021.11.29.(월)/images/1.jpg" />
+        <img src="../2021.11.29.(월)/images/1.jpg" id="bimage" />
+        <div>
+          <img class="small" src="../2021.11.29.(월)/images/dish1.jpg" />
+          <img class="small" src="../2021.11.29.(월)/images/dish2.jpg" />
+          <img class="small" src="../2021.11.29.(월)/images/dish3.jpg" />
+        </div>
       </div>
       <div id="desc">
         <h2>Information</h2>
@@ -105,11 +114,24 @@
 
       document.querySelector('#title').style.color = '#0099ff';
 
-      document.querySelectorAll('.accent')[1].style.color = '#00ff77';
+      document.querySelectorAll('.accent')[1].style.color = '#ff0077';
 
       /* HTML 개체 변경해주기*/
 
       document.querySelector("#pimage>img").setAttribute("src", "../2021.11.29.(월)/images/2.jpg")
+
+      /* show a big picture when click small pictures */
+      var bigPic = document.getElementById('bimage');
+      var smallPic = document.querySelectorAll('.small');
+
+      function showBig () {
+        var newPic = this.src;
+        bigPic.setAttribute("src", newPic);
+      }
+
+      for (var i=0; i<smallPic.length; i++) {
+        smallPic[i].onclick = showBig;
+      }
 
     </script>
   </body>

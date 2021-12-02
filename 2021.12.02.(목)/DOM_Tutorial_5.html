@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Tutorial 5</title>
+    <style>
+      .pre_big img {
+        width: 200px;
+        height: 200px;
+      }
+      .pre_small img {
+        width: 50px;
+        height: 50px;
+        border: 3px solid tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>사진 미리보기를 만들어보자!</h1>
+      <div class="pre_big">
+        <img src="../2021.11.29.(월)/images/dish1.jpg" />
+      </div>
+      <div class="pre_small">
+        <img src="../2021.11.29.(월)/images/dish1.jpg" />
+        <img src="../2021.11.29.(월)/images/dish2.jpg" />
+        <img src="../2021.11.29.(월)/images/dish3.jpg" />
+        <img src="../2021.11.29.(월)/images/dish4.jpg" />
+        <img src="../2021.11.29.(월)/images/dish5.jpg" />
+      </div>
+    </div>
+
+    <script>
+      let preBigImg = document.querySelector('.pre_big img');
+      let preSmallImg = document.querySelectorAll('.pre_small img');
+
+      const onShowPreview = function () {
+        let imgSrc = this.src;
+        preBigImg.setAttribute('src', imgSrc);
+      };
+      
+      for (let i = 0; i < preSmallImg.length; i++) {
+        preSmallImg[i].onclick = onShowPreview;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Tutorial 6</title>
+</head>
+<body>
+  <div>
+    <img src="../2021.11.29.(월)/images/1.jpg" id="pic">
+  </div>
+
+  <script>
+    let pic = document.getElementById('pic');
+
+    function changePic () {
+      pic.src = "../2021.11.29.(월)/images/2.jpg"
+    }
+
+    function changeOrigin () {
+      pic.src = "../2021.11.29.(월)/images/1.jpg"
+    }
+
+    // pic.onclick = changePic;
+    // pic.onclick = changeOrigin;
+
+    pic.addEventListener("mouseover", changePic());
+    pic.addEventListener("mouseout", changeOrigin);
+
+  </script>
+</body>
+</html>
