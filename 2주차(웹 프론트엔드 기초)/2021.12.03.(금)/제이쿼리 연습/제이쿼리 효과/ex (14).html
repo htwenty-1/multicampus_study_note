@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#btn1').click(function () {
+          $('#show').text('clicked!');
+        });
+        $('#btn2').dblclick(function () {
+          $('#show').text('double clicked!');
+        });
+        $('#box').mouseenter(function () {
+          $('#show').text('in mouse pointer');
+        });
+        $('#box').mouseleave(function () {
+          $('#show').text('leave mouse pointer');
+        });
+      });
+    </script>
+    <style>
+      #box {
+        width: 120px;
+        height: 30px;
+        margin-top: 10px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">클릭</button>
+    <button id="btn2">더블 클릭</button>
+    <div id="box">div 요소</div>
+
+    <p id="show"></p>
+  </body>
+</html>

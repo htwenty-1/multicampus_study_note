@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {    
+    $('#btn').click(function () {
+        var url= $("#naver").attr("href");
+        alert(url);
+    })
+
+});
+</script>
+</head>	
+<body>
+    <p>
+        <a id="naver" href="https://naver.com">네이버로 이동하기</a>
+    </p>
+    <button id="btn">href 값 얻기</button>
+</body>  
+</html>

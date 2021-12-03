@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $('#show').text('scroll is moved');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div style="width: 2500px; overflow: auto; background-color: yellow">
+      희망은 가난한 사람의 빵이다.<br />
+      말 없는 발이 천리간다.<br />
+      피는 물보다 진하다.
+    </div>
+
+    <p id="show"></p>
+  </body>
+</html>
