@@ -10,5 +10,6 @@
 | 주차 | 내용                       | 시간 | 선행학습여부|
 | ----| ------------------------- |----|----------|
 | 1    | TRIZ 기반 Design Thinking |40  |처음|
-| 2    | HTML, CSS, JavaScript    | 80 |O|
-| 3    | 업로드예정                  |    | |
+| 2    | HTML, CSS, JavaScript    |40  |O|
+| 3    | HTML, CSS, JavaScript    |40  |O|
+| 4    | 
