@@ -91,7 +91,57 @@ public class MainClass {
 			}
 		}
 		
+		// 학생의 최고 점수를 출력하라.
 		
+		int maxScore = scoreArr[0];		// 최고 점수를 담을 변수 선언하고 배열의 인덱스 0 참조
+		for (int i = 0; i < scoreArr.length; i++) {
+			if(scoreArr[i] > maxScore) {
+				maxScore = scoreArr[i];
+			}
+		}
+		System.out.println(maxScore);
+		
+		// for each문
+		
+		for (int num : scoreArr) {	// [0] ~ [n] ... JS의 for( n in arr )
+			System.out.print(num + " ");
+		}
+		
+		for (String name : names) {
+			System.out.println(name + " ");
+		}
+		
+		// for문 중첩
+		/*
+		for (int i = 0; i < 10; i++) {
+			System.out.println("i = " + i);
+			
+			for (int j = 0; j < 5; j++) {
+				System.out.println("\tj = " + j);
+			}
+		}
+		*/
+		
+		// i * j
+		for (int i = 1; i < 10; i++) {
+			for (int j = 1; j < 10; j++) {
+				System.out.print(i + " x " + j + " = " + (i * j) + " ");				
+			}
+			System.out.println();
+		}
+		
+		int array2[][] = {
+				{ 11, 12, 13, 14 },
+				{ 21, 22, 23, 24 },
+				{ 31, 32, 33, 34 },
+		};
+		
+		for (int i = 0; i < array2.length; i++) {
+			for (int j = 0; j < array2[i].length; j++) {
+				System.out.print(array2[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }
