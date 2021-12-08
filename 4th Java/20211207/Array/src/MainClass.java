@@ -91,7 +91,7 @@ public class MainClass {
 		
 		// int Arr[] = new int[5]; 와 같은 방법은 배열 항목의 개수를 정확히 모를 때 쓸 수가 있을 것이고
 		// int Arr[] = { }; 와 같은 방법은 배열 항목의 개수를 정확히 알고 있을 때 쓰면 좋을것이
-		
+			
 		System.out.println("-------------------------------------------");
 		
 		int myIntArr[] = new int [5];

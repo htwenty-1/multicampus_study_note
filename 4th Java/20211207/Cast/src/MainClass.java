@@ -23,10 +23,10 @@ public class MainClass {
 		// 자동 (자료)형 변환
 		short sh = 12345;	// 2byte 변수
 		int num;			// 4byte 변수
-//		
-//		num = sh;			// 이것이 자동 자료형 변환
-//		
-//		System.out.println(num);
+		
+		num = sh;			// 이것이 자동 자료형 변환
+		
+		System.out.println(num);
 		
 		num = 23456;
 		sh = (short)num;	// 이것이 강제 자료형 변환

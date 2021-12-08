@@ -24,6 +24,7 @@ public class MainClass {
 		
 		// 입력받은 연산자에 따라 결과값 다르게 지정하기
 		int answer = 0;
+		
 		switch (operator) {
 			case "+":
 				answer = firstNum + secondNum;
@@ -42,9 +43,19 @@ public class MainClass {
 				break;
 		}
 		
+		/* 처리는 switch문이 더 빠름
+		if(operator.equals("+")) {
+			answer = firstNum + secondNum;
+		} else if (operator.equals("-")) {
+			answer = firstNum - secondNum;
+		} else if (operator.equals("*")) {
+			answer = firstNum * secondNum;
+		} else if (operator.equals("/")) {
+			answer = firstNum / secondNum;
+		}
+		*/
+		
 		// 연산결과 출력하기
-		System.out.println(firstNum + operator + secondNum + "=" + answer);		
-
+		System.out.println(firstNum + " " + operator + " " + secondNum + " = " + answer);		
 	}
-
 }

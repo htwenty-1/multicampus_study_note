@@ -25,7 +25,7 @@ public class MainClass {
 		 *         int []array2[] = new int[3][4];
 		 *         int [][]array2 = new int[3][4];
 		 *         
-		 *         int array3 = [][] = {
+		 *         int array3[][] = {
 		 *         	  { 1, 2, 3, 4 },
 		 *         	  { 5, 6, 7, 8 },
 		 *         	  { 9, 10, 11, 12 }

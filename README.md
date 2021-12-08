@@ -12,4 +12,4 @@
 | 1    | TRIZ 기반 Design Thinking |40  |처음|
 | 2    | HTML, CSS, JavaScript    |40  |O|
 | 3    | HTML, CSS, JavaScript    |40  |O|
-| 4    | 
+| 4    | Java Programming for Starter | 40 | 처음|

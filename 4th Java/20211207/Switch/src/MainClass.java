@@ -42,6 +42,11 @@ public class MainClass {
 			case 3:
 				System.out.println("number is 3");
 				break;
+			// 범위 사용 불가
+//			case number > 8:
+//				System.out.println("number is 9");
+//				break;
+			// default 생략 가능
 			default:
 				System.out.println("number is " + number);
 				break;

@@ -159,6 +159,10 @@ public class MainClass {
 	    } else {
 	    	System.out.println("equals 다른 문자열!");
 	    }
+	    
+	    
+	    // Switch문
+	    
 	}
 
 }
