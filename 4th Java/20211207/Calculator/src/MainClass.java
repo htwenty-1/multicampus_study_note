@@ -14,8 +14,16 @@ public class MainClass {
 		int firstNum = scan.nextInt();
 		
 		// 연산자 입력 받기
-		System.out.print("연산자를 입력해주세요 : ");
-		String operator = scan.next();
+		// System.out.print("연산자를 입력해주세요 : ");
+		// String operator = scan.next();
+		while(true) {
+			System.out.print("연산자를 입력해주세요 : ");
+			String operator = scan.next();
+			if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/") ) {
+				break;
+			}
+			System.out.println("연산자를 정확히 입력해주세요!")
+		}
 		
 		// 두번째 숫자 입력 받기
 		System.out.print("두번째 숫자를 입력하세요 : ");
