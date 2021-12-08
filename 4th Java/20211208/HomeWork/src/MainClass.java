@@ -67,13 +67,14 @@ public class MainClass {
 		 */
 		
 		
-		
+		/*
 		for (int s = 0; s < 5; s++) {
 			faviNumArr = new int[s];
 			System.out.print((s+1) + "번째 숫자를 입력해주세요: ");
 			faviNumArr[s] = input.nextInt();
 			System.out.println("당신이 입력하고 저정한 숫자는 " + faviNumArr[i] + "입니다!");
 		}
+		*/
 	}
 
 }
