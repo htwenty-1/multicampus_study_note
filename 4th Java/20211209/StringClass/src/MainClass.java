@@ -73,7 +73,7 @@ public class MainClass {
 		
 		
 		// split : 토큰을 기준으로 문자열을 자른다
-		// 예를 들어 홍길동+24+1996/10/15+서울시라면 _ +가 토큰이 되고 토큰을 기준으로 문자열을 자른다.
+		// 예를 들어 홍길동+24+1996/10/15+서울시라면 +가 토큰이 되고 토큰을 기준으로 문자열을 자른다.
 		
 		String str8 = "홍길동-25-2001/05/1-서울시";
 		// 애초에 자료형 자체가 
@@ -84,15 +84,39 @@ public class MainClass {
 		System.out.println(spStr[3]);
 		
 		for(int i = 0; i < spStr.length; i++) {
-				
+			System.out.println(spStr[i]);
 		}
 		
 		
 		// substring: 문자열을 범위로 자른다!
 		String str9 = "안녕 반가워요 건강해!";
 		String substr = str9.substring(3, 7);		//(시작위치, 이 위치 전까지) 3 ~ 6까지
-		
 		System.out.println(substr);
+		
+		
+		// toUpperCase: 모두 대문자로 변경
+		String str10 = "abcDEF";
+		String upStr = str10.toUpperCase();
+		System.out.println(upStr);
+		
+		// toLowerCase: 모두 소문자로 변경
+		String lowStr = str10.toLowerCase();
+		System.out.println(lowStr);
+		
+		// trim : 문자열의 앞뒤 공백을 없애줌
+		String str11 = "     java   java  java             ";
+		String trimStr = str11.trim();
+		System.out.println(trimStr);
+		
+		// charAt: 인덱스에 해당하는 문자를 돌려받음
+		String str12 = "가나다라마";
+		char c = str12.charAt(2);
+		System.out.println(c);
+		
+		// contains: 특정 문자를 포함하고 있는지 boolean 값으로 반환
+		String str13 = "대전광역시 서구 둔산동";
+		boolean b1 = str13.contains("서구");
+		System.out.println(b1);
 	}
 
 }
