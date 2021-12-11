@@ -26,34 +26,50 @@ public class MainClass {
 		
 		switch(work) {
 			case 1:
-				int num10 = Integer.parseInt(numStr);
-				String num2 = Integer.toBinaryString(num10);
+				// int num10 = Integer.parseInt(numStr);
+				// String num2 = Integer.toBinaryString(num10);
+				String num2 = decToBin(numStr);
 				System.out.println("10진수 " + numStr + "의 2진수는 " + num2 + "입니다.");
 				break;
 			case 2:
-				int num102 = Integer.parseInt(numStr);
-				String num8 = Integer.toOctalString(num102);
+				String num8 = decToOct(numStr);
 				System.out.println("10진수 " + numStr + "의 8진수는 " + num8 + "입니다.");
 				break;
 			case 3:
-				int num103 = Integer.parseInt(numStr);
-				String num16 = Integer.toHexString(num103);
+				String num16 = decToHex(numStr);
 				System.out.println("10진수 " + numStr + "의 16진수는 " + num16 + "입니다.");
 				break;
 			case 4:
-				int num104 = Integer.parseInt(numStr, 2);
-				System.out.println("2진수 " + numStr + "의 10진수는 " + num104 + "입니다.");
+				int binToDec = Integer.parseInt(numStr, 2);
+				System.out.println("2진수 " + numStr + "의 10진수는 " + binToDec + "입니다.");
 				break;
 			case 5:
-				int num105 = Integer.parseInt(numStr, 8);
-				System.out.println("8진수 " + numStr + "의 10진수는 " + num105 + "입니다.");
+				int octToDec = Integer.parseInt(numStr, 8);
+				System.out.println("8진수 " + numStr + "의 10진수는 " + octToDec + "입니다.");
 				break;
 			case 6:
-				int num106 = Integer.parseInt(numStr, 16);
-				System.out.println("16진수 " + numStr + "의 10진수는 " + num106 + "입니다.");
+				int hexToDec = Integer.parseInt(numStr, 16);
+				System.out.println("16진수 " + numStr + "의 10진수는 " + hexToDec + "입니다.");
 				break;
 		}
 
 	}
-
+	
+	public static String decToBin(String numStr) {
+		int num10 = Integer.parseInt(numStr);
+		String num2 = Integer.toBinaryString(num10);
+		return num2;
+	}
+	
+	public static String decToOct(String numStr) {
+		int num10 = Integer.parseInt(numStr);
+		String num8 = Integer.toOctalString(num10);
+		return num8;
+	}
+	
+	public static String decToHex(String numStr) {
+		int num10 = Integer.parseInt(numStr);
+		String num16 = Integer.toHexString(num10);
+		return num16;
+	}
 }

@@ -17,6 +17,11 @@ public class MainClass {
 		
 		int number[] = { 7, 9, 5, 4, 1, 3 };
 		
+		int result[] = sortArray(number);
+		
+		System.out.println(Arrays.toString(result));
+		
+		/*
 		int temp;
 		
 		// 마지막과 마지막은 비교할 필요가 없으니까 범위를 i < number.length-1
@@ -32,7 +37,25 @@ public class MainClass {
 		}
 		
 		System.out.println(Arrays.toString(number));
+		*/
+	}
+	
+	public static int[] sortArray(int[] numberArr) {
 		
+		int temp;
+		// 마지막과 마지막은 비교할 필요가 없으니까 범위를 i < number.length-1
+		for (int i = 0; i < numberArr.length - 1; i++) {
+			// 자신과 같은 위치에 있는 것은 비교할 필요가 없으니까 j=i+1
+			for (int j = i + 1; j < numberArr.length; j++) {
+				if (numberArr[i] > numberArr[j]) {	// 교환처리, 여기 부등호 방향만 바꿔주면 내림차순~~
+					temp = numberArr[i];
+					numberArr[i] = numberArr[j];
+					numberArr[j] = temp;
+				}
+			}
+		}
+		
+		return numberArr;
 	}
 
 }

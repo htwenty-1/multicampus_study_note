@@ -25,8 +25,9 @@ public class MainClass {
 			   void
 		*/
 		
+		/*
 		int i = functionName('A');	// 'A' == argument
-		System.out.println(i);
+//		System.out.println(i);
 		
 		
 		String st = "abcDEF";
@@ -44,7 +45,7 @@ public class MainClass {
 		
 		char c = str.charAt(1);
 		System.out.println(c);
-		
+		*/
 		
 		// 배열 복사
 		int array[] = { 11, 22, 33 };
@@ -64,7 +65,6 @@ public class MainClass {
 		
 		functionName4(arrayNum);
 		System.out.println(Arrays.toString(arrayNum));
-		
 		
 		int arr[] = functionName5(arrayNum);
 		System.out.println(Arrays.toString(arr));

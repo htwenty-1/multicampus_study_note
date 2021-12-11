@@ -24,7 +24,10 @@ public class MainClass {
 		System.out.print("몇으로 나눌까요? >> ");
 		int y = input.nextInt();
 		
-		division(x, y);
+		// division(x, y);
+		int tag[] = new int[1];
+		int ret = division(x, y, tag);
+		System.out.println("몫은 \"" + ret + ", \"나머지는 \"" + tag[0] + "\" 입니다.");
 		
 		
 		// 두점 사이의 거리를 구하는 함수를 작성하라. 
@@ -71,10 +74,19 @@ public class MainClass {
 	}
 	
 	// 몫과 나머지를 구하는 함수
+	/*
 	public static void division(int p, int q) {
 		int quotient = p / q;
 		int rest = p % q;
 		System.out.println("몫은 \"" + quotient + ", \"나머지는 \"" + rest + "\" 입니다.");
+	}
+	*/
+	
+	// public static int division(int p, int q, int* tag)
+	public static int division(int p, int q, int[] tag) {
+		int r = p / q;
+		tag[0] = p % q;
+		return r;
 	}
 	
 	// 두 점사이의 거리를 구하는 함수
@@ -94,9 +106,11 @@ public class MainClass {
 			if (n == '.') {
 				numCheck = true;
 				break;
+				//return true;
 			}
 		}		
 		return numCheck;
+		//return false;
 	}
 	
 }
