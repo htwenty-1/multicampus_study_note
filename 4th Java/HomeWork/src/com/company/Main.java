@@ -75,7 +75,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("입력할 학생 수 >> ");
         int count = sc.nextInt();
-//        String[][] students = new String[count][5];
+
         String[][] students = new String[count][5];
 
         for (int i = 0; i < students.length; i++) {
@@ -90,7 +90,6 @@ public class Main {
             students[i][3] = sc.next();
             System.out.print((i+1) + "번째 학생의 수학점수 >> ");
             students[i][4] = sc.next();
-            // }
         }
 
         return students;
@@ -98,19 +97,13 @@ public class Main {
 
     // 전체 점수 합
     public static int[] totalScore (String[][] student) {
-        int[] scores = {0, 0, 0};
+        int[] scores = { 0, 0, 0 };
 
-        for(int j=2; j < 5; j++) {
+        for(int j=2; j < student.length; j++) {
             for (String[] students : student) {
                 scores[j - 2] += Integer.parseInt(students[j]);
             }
         }
-
-        /*
-        System.out.println("국어 총점 : " + scores[0]);
-        System.out.println("영어 총점 : " + scores[1]);
-        System.out.println("수학 총점 : " + scores[2]);
-        */
 
         return scores;
     }

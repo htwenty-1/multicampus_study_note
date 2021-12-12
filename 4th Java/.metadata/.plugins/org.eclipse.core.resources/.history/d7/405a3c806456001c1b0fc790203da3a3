@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class MainClass {
+	public static void main(String[] args) {
+		
+		// 입력받기 위한 것
+		Scanner scan = new Scanner(System.in);
+		
+		/*
+		int iNumber;
+		
+		System.out.print("정수 = ");
+		iNumber = scan.nextInt();
+		
+		System.out.println("입력받은 수: " + iNumber);
+		*/
+		
+		double dNumber;
+		
+		System.out.print("실수 = ");
+		dNumber = scan.nextDouble();
+		
+		System.out.print("입력받은 수: " + dNumber);
+		
+		// 입력(console) -> 저장(변수)
+	}
+}
+
