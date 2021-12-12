@@ -15,9 +15,9 @@ public class Main {
              1-2. 입력받을 학생 수, i번째 학생의 이름, 생년월일, 국어, 영어, 수학점수 순으로 입력받기
            2. 각 학생들의 국어, 영어, 수학 점수를 합친 총점, 개개인의 총점을 구한다.
            3. 학생들의 국어 점수 총점을 구한다.
-           4. 영어 점수의 최고점을 구한다. ===> 내림차순 sort해서 맨 앞에
-           5. 수학점수의 최저점을 구한다.  ===> 오름차순 sort해서 맨 앞에
-           6. 학급에서 1등은 누구인지 이름을 출력한다.  ===> 학생별 평균 구해서 제일 높은 애
+           4. 영어 점수의 최고점을 구한다.
+           5. 수학점수의 최저점을 구한다.
+           6. 학급에서 1등은 누구인지 이름을 출력한다.
         */
 
         /*
@@ -57,15 +57,15 @@ public class Main {
 
         // 영어점수의 최고점 구하기
         int engTop = engTop(students);
-        System.out.println("영어점수의 최고점은" + engTop + "점");
+        System.out.println("영어점수의 최고점은 " + engTop + "점");
 
         // 수학점수의 최저점 구하기
         int mathLow = mathLow(students);
-        System.out.println("수학점수의 최저점은" + engTop + "점");
+        System.out.println("수학점수의 최저점은 " + mathLow + "점");
 
         // 학급에서 1등 누군지 구하기
-//        String ranking = rank(students);
-//        System.out.println("1등 학생의 이름은 \"" + ranking + "\"");
+        String ranking = rank(students);
+        System.out.println("1등 학생의 이름은 \"" + ranking + "\"");
 
 
     }
@@ -146,7 +146,7 @@ public class Main {
         int total = 0;
 
         for (int i = 0; i < student.length; i++) {
-            total += Integer.parseInt(student[i][3]);
+            total += Integer.parseInt(student[i][4]);
         }
 
         return total;
@@ -157,7 +157,7 @@ public class Main {
         int total = 0;
 
         for (int i = 0; i < student.length; i++) {
-            total += Integer.parseInt(student[i][4]);
+            total += Integer.parseInt(student[i][3]);
         }
 
         return total;
@@ -169,21 +169,24 @@ public class Main {
 
         // 영어점수 가져오기
         for (int i = 0; i < student.length; i++) { 
-            scoreArr[i] = Integer.parseInt(student[i][3]);
+            scoreArr[i] += Integer.parseInt(student[i][3]);
         }
         
-        // 오림차순으로 정렬
+        // 내림차순으로 정렬
         // Arrays.sort(scoreArr);
-        for (int i = 0; i < scoreArr.length; i++) {
-            if (scoreArr[i] > scoreArr[i+1]) {
-                int temp = scoreArr[i];
-                scoreArr[i] = scoreArr[i + 1];
-                scoreArr[i + 1] = temp;
+        int temp;
+        for (int i = 0; i < scoreArr.length - 1; i++) {
+            for (int j = i+1; j < scoreArr.length; j++) {
+                if (scoreArr[i] < scoreArr[j]) {
+                    temp = scoreArr[i];
+                    scoreArr[i] = scoreArr[j];
+                    scoreArr[j] = temp;
+                }
             }
         }
 
         // 최대값 뽑기
-        int result = scoreArr[scoreArr.length-1];
+        int result = scoreArr[0];
 
         return result;
         
@@ -193,22 +196,24 @@ public class Main {
     public static int mathLow (String[][] student) {
         int[] scoreArr = new int [student.length];
 
-        // 영어점수 가져오기
+        // 수학점수 가져오기
         for (int i = 0; i < student.length; i++) {
-            scoreArr[i] = Integer.parseInt(student[i][4]);
+            scoreArr[i] += Integer.parseInt(student[i][4]);
         }
 
         // 오름차순으로 정렬
         // Arrays.sort(scoreArr);
-        for (int i = 0; i > scoreArr.length; i++) {
-            if (scoreArr[i] < scoreArr[i+1]) {
-                int temp = scoreArr[i];
-                scoreArr[i] = scoreArr[i + 1];
-                scoreArr[i + 1] = temp;
+        int temp;
+        for (int i = 0; i < scoreArr.length - 1; i++) {
+            for (int j = i+1; j < scoreArr.length; j++) {
+                if (scoreArr[i] > scoreArr[j]);
+                    temp = scoreArr[i];
+                    scoreArr[i] = scoreArr[j];
+                    scoreArr[j] = temp;
             }
         }
 
-        // 최대값 뽑기(오름차순이니까 0번째를 가져옴)
+        // 최소값 뽑기
         int result = scoreArr[0];
 
         return result;
@@ -216,30 +221,25 @@ public class Main {
     }
 
     // 1등 학생 구하기
-    /*
     public static String rank (String student[][]) {
+        int[] toCompareScore = new int [student.length];
 
-        int[] arrayToCompare = new int [3];  // 세과목
-        int totalScore = 0;
-        int max = 0;
-        int index = 0;
+        int total;
+        String index = "";
 
         for (int i = 0; i < student.length; i++) {
-            for (int j = 2; j < student.length; j++) {
-                totalScore += Integer.parseInt(student[i][j]);
-                arrayToCompare[i] = totalScore;
-                if(max < arrayToCompare[i]) {
-                    max = totalScore;
-                    index = i;
-                }
+            total = 0;
+            for (int j = 2; j < student[0].length; j++) {
+                total += Integer.parseInt(student[i][j]);
+            }
+            toCompareScore[i] += total;
+
+            if (toCompareScore[i] > toCompareScore[0]) {
+                index = student[i][0];
             }
         }
 
-        String result = student[index][0];
-        return result;
-
+        return index;
 
     }
-
-     */
 }
