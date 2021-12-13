@@ -20,13 +20,6 @@ public class Main {
            6. 학급에서 1등은 누구인지 이름을 출력한다.
         */
 
-        /*
-            { { 이름, 생년월일, 국어, 영어, 수학 } }
-            국어 = i번째의 j[2] ===>
-            영어 = i번째의 j[3]
-            수학 = i번째의 j[4]
-        */
-
         // 학생들의 정보를 2차원 배열에 입력 받기
         String[][] students = countStudent();
         // System.out.println(scores);
@@ -79,7 +72,6 @@ public class Main {
         String[][] students = new String[count][5];
 
         for (int i = 0; i < students.length; i++) {
-            // for (int j = 0; j < students[0].length; j++) {
             System.out.print((i+1) + "번째 학생의 이름 >> ");
             students[i][0] = sc.next();
             System.out.print((i+1) + "번째 학생의 생년월일(yyyy-mm-dd) >> ");
