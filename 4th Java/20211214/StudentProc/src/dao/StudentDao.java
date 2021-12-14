@@ -46,9 +46,9 @@ public class StudentDao {
     }
 
     public void delete() {  // 학생정보 삭제
-        for (int i = 0; i < student.length; i++) {
-            System.out.println((i+1) + ". " + student[i]);
-        }
+        // 정보를 수정하기 위해 학생들 목록을 보여줌
+        studentArr();
+
         System.out.print("삭제할 학생정보 행 번호 입력 >> ");
         int delNum = sc.nextInt();
 
@@ -85,14 +85,15 @@ public class StudentDao {
     }
 
     public void update() {  // 학생정보 수정
-        for (int i = 0; i < student.length; i++) {
-            System.out.println((i+1) + ". " + student[i]);
-        }
+        // 정보를 수정하기 위해 학생들 목록을 보여줌
+        studentArr();
+
+
         for (int i = 0; i < student.length; i++) {
             System.out.print("수정할 학생 행번호 입력 >> ");
             wantDel = sc.nextInt();
 
-            System.out.println(student[wantDel-1] + "을 수정합니다.");
+            System.out.println(student[wantDel-1] + "을 수정합니다.");    // 위에서 i+1로 인덱스 넘버를 지정했기 때문에 입력한 번호의 -1번째를 수정하겠다고 명시
             System.out.println("변경 항목 선택");
             System.out.println("1. 번호, 2. 이름, 3. 키, 4. 영어점수, 5. 수학점수");
             System.out.print("번호입력 >> ");
@@ -134,8 +135,17 @@ public class StudentDao {
 
     // 전부보기 : 확인용
     public void alldata() {
+        studentArr();
+    }
+
+    // 학생 정보를 불러오는 멤버 메서드
+    public void studentArr() {
         for (int i = 0; i < student.length; i++) {
-            System.out.println((i+1) + ". " + student[i]);
+            if (student[i] != null) {
+                System.out.println((i+1) + ". " + student[i]);
+            } else {
+                System.out.print("");
+            }
         }
     }
 
