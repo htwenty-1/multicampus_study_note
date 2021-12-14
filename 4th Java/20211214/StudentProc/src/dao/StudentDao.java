@@ -11,7 +11,7 @@ public class StudentDao {
 
     private final StudentDto[] student = new StudentDto[20];
     private int count;
-    private int wantDel;
+    private int wantEdit;
 
     public StudentDao() {
         count = 0;
@@ -89,49 +89,49 @@ public class StudentDao {
         studentArr();
 
 
-        for (int i = 0; i < student.length; i++) {
-            System.out.print("수정할 학생 행번호 입력 >> ");
-            wantDel = sc.nextInt();
 
-            System.out.println(student[wantDel-1] + "을 수정합니다.");    // 위에서 i+1로 인덱스 넘버를 지정했기 때문에 입력한 번호의 -1번째를 수정하겠다고 명시
-            System.out.println("변경 항목 선택");
-            System.out.println("1. 번호, 2. 이름, 3. 키, 4. 영어점수, 5. 수학점수");
-            System.out.print("번호입력 >> ");
-            int selNum = sc.nextInt();
+        System.out.print("수정할 학생 행번호 입력 >> ");
+        wantEdit = sc.nextInt();
 
-            switch (selNum) {
-                case 1:
-                    System.out.print("바꿀 내용 입력 >> ");
-                    int changeNum = sc.nextInt();
-                    student[selNum-1].setNumber(changeNum);
-                    break;
-                case 2:
-                    System.out.print("바꿀 내용 입력 >> ");
-                    String changeName = sc.next();
-                    student[selNum-1].setName(changeName);
-                    break;
-                case 3:
-                    System.out.print("바꿀 내용 입력 >> ");
-                    double changeHeight = sc.nextDouble();
-                    student[selNum-1].setHeight(changeHeight);
-                    break;
-                case 4:
-                    System.out.print("바꿀 내용 입력 >> ");
-                    int changeEng = sc.nextInt();
-                    student[selNum-1].setEng(changeEng);
-                    break;
-                case 5:
-                    System.out.print("바꿀 내용 입력 >> ");
-                    int changeMath = sc.nextInt();
-                    student[selNum-1].setMath(changeMath);
-                    break;
-            }
+        System.out.println(student[wantEdit-1] + "을 수정합니다.");    // 위에서 i+1로 인덱스 넘버를 지정했기 때문에 입력한 번호의 -1번째를 수정하겠다고 명시
+        System.out.println("변경 항목 선택");
+        System.out.println("1. 번호, 2. 이름, 3. 키, 4. 영어점수, 5. 수학점수");
+        System.out.print("번호입력 >> ");
+        int selNum = sc.nextInt();
 
-            break;
-
+        switch (selNum) {
+            case 1:
+                System.out.print("바꿀 내용 입력 >> ");
+                int changeNum = sc.nextInt();
+                student[wantEdit-1].setNumber(changeNum);
+                break;
+            case 2:
+                System.out.print("바꿀 내용 입력 >> ");
+                String changeName = sc.next();
+                student[wantEdit-1].setName(changeName);
+                break;
+            case 3:
+                System.out.print("바꿀 내용 입력 >> ");
+                double changeHeight = sc.nextDouble();
+                student[wantEdit-1].setHeight(changeHeight);
+                break;
+            case 4:
+                System.out.print("바꿀 내용 입력 >> ");
+                int changeEng = sc.nextInt();
+                student[wantEdit-1].setEng(changeEng);
+                break;
+            case 5:
+                System.out.print("바꿀 내용 입력 >> ");
+                int changeMath = sc.nextInt();
+                student[wantEdit-1].setMath(changeMath);
+                break;
         }
 
+
+
     }
+
+
 
     // 전부보기 : 확인용
     public void alldata() {
