@@ -62,6 +62,8 @@ public class StudentDto {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "StudentDto [number=" + number + ", name=" + name + ", height=" + height + ", eng=" + eng + ", math="
+            + math + "]";
     }
+
 }

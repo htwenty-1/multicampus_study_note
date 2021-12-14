@@ -15,6 +15,7 @@ public class Main {
         //menu
         while(true) {
             // CRUD
+            System.out.println("*************************************");
             System.out.println("1. 학생정보 추가");
             System.out.println("2. 학생정보 삭제");
             System.out.println("3. 학생정보 검색");
@@ -23,9 +24,11 @@ public class Main {
             // ETC.
             System.out.println("5. 학생정보 모두 출력");
             System.out.println("6. 종료");
+            System.out.println("*************************************");
 
             System.out.print("메뉴 번호 입력 >> ");
             int menuNum = sc.nextInt();
+            System.out.println("*************************************");
 
             switch(menuNum) {
                 case 1:
