@@ -14,25 +14,7 @@ public class Main {
                - 은닉성(캡슐화)
                - 상속성
                - 다형성
-            4. 형식
-
-                class className {
-                    variable
-                    method
-                }
-        */
-
-        // class나 array는 반드시 동적할당(allocation)이 필요한데, 이는 Heap 영역에 저장된다.
-        MyClass cls = new MyClass();
-        // 자료형 클래스의_변수(인스턴스) == 객체, Object
-
-        cls.number = 1;
-        cls.name = "홍길동";
-        cls.method();
-
-
-        MyClass cls1 = new MyClass();
-        cls1.number = 2;
+               - 추상화
         cls1.name = "성춘향";
         cls1.method();
 

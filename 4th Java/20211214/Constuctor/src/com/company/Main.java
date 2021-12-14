@@ -18,10 +18,10 @@ public class Main {
         // 배열을 초기화 할 때는 이렇게 했는데
         int[] array = { 11, 22, 33 };
 
-        // 배열을 초기화 할때는?
+        // 클래스를 초기화 할때는?
         // MyClass cls = { 11, "홍길동" } ---> 가능?? 불가능!!
 
-        // 그래서 배열을 초기화 할 때는 생성자를 써줘야한다
+        // 그래서 클래스를 초기화 할 때는 new 연산자를 써줘야한다
         // MyClass cls = new MyClass(); 이렇게
 
         // MyClass cls = new MyClass();    // 객체가 생성되면 기본 생성자(클래스 내의 constructor) 호출

@@ -9,7 +9,7 @@ public class MyClass {
         접근 지정자
         private : 개인적인 - 클래스 내부에서만 접근할 수 있음.
         public : 대중적인
-        protected : 상속에 따른 호보 ... 요즘은 별로 안씀
+        protected : 상속에 따른 보호 ... 요즘은 별로 안씀
     */
 
     private int number;
