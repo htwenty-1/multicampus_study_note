@@ -7,9 +7,10 @@
 
 ## 교육과정
 
-| 주차 | 내용                       | 시간 | 선행학습여부|
-| ----| ------------------------- |----|----------|
-| 1    | TRIZ 기반 Design Thinking |40  |처음|
-| 2    | HTML, CSS, JavaScript    |40  |O|
-| 3    | HTML, CSS, JavaScript    |40  |O|
-| 4    | Java Programming for Starter | 40 | 처음|
+| 주차 | 내용                       | 시간 | 선행학습여부|일자|
+| ----| ------------------------- |----|----------|---|
+| 1    | TRIZ 기반 Design Thinking |40  |처음|2021.11.15. ~ 11.19.|
+| 2    | HTML, CSS, JavaScript    |40  |O|2021.11.22. ~ 11.26.|
+| 3    | HTML, CSS, JavaScript    |40  |O|2021.11.29. ~ 12.3.
+| 4    | Java Programming for Starter | 40 | 처음|2021.12.6. ~ 12.10.|
+| 5    | Java Programming for Starter | 40 | 처음|2021.12.13. ~ 12.17.|
