@@ -60,6 +60,14 @@ public class StudentDto {
         this.math = math;
     }
 
+    public void remove() {
+        number = 0;
+        name = "";
+        height = 0.0;
+        math = 0;
+        eng = 0;
+    }
+
     @Override
     public String toString() {
         return "StudentDto [number=" + number + ", name=" + name + ", height=" + height + ", eng=" + eng + ", math="

@@ -53,6 +53,7 @@ public class StudentDao {
         int delNum = sc.nextInt();
 
         student[delNum-1] = null;
+        // student[delNum-1].remove();
         System.out.println("삭제 완료");
 
     }
@@ -63,6 +64,7 @@ public class StudentDao {
         String name = sc.next();
 
         // 찾기
+        /*
         int index = -1;     // 못찾을 경우 대배해서 인덱스넘버 -1로 선언
         for (int i = 0; i < student.length; i++) {
             StudentDto dto = student[i];
@@ -73,6 +75,9 @@ public class StudentDao {
                 }
             }
         }
+        */
+
+        int index = search(name);
 
         // 출력
         if(index == -1) {
@@ -147,6 +152,21 @@ public class StudentDao {
                 System.out.print("");
             }
         }
+    }
+
+    // 배열을 찾아주는 멤버 메서드
+    public int search(String name) {
+        int index = -1;     // 못찾을 경우 대배해서 인덱스넘버 -1로 선언
+        for (int i = 0; i < student.length; i++) {
+            StudentDto dto = student[i];
+            if(dto != null && !dto.getName().equals("")) {
+                if (dto.getName().equals(name)) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        return index;
     }
 
 
