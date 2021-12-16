@@ -4,8 +4,6 @@ public class Circle extends Shape{
 
     double r;
 
-    public Circle() {}
-
     public Circle(double r) {
         this.r = r;
     }
