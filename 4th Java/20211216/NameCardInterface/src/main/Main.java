@@ -3,6 +3,7 @@ package main;
 import cls.NameCard;
 import cls.PrintNameCard;
 import cls.PrintNamePhoneCard;
+import cls.PrintNamePhoneEmailCard;
 
 public class Main {
 
@@ -14,6 +15,9 @@ public class Main {
         nameCard.print();
 
         nameCard.setPrintCard(new PrintNamePhoneCard());
+        nameCard.print();
+
+        nameCard.setPrintCard(new PrintNamePhoneEmailCard());
         nameCard.print();
 
     }
