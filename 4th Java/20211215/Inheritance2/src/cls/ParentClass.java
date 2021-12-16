@@ -12,6 +12,7 @@ public class ParentClass {
     public ParentClass(int number, String name) {
         this.number = number;
         this.name = name;
+        System.out.println("ParentClass ParentClass()");
     }
 
 }

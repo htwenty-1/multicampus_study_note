@@ -6,7 +6,7 @@ public class ParentClass {
     protected String name;      // 외부접근은 불가하지만 상속받은 객체는 접근 가능
 
     public void parentMethod () {
-        System.out.println("ParentClass parentMethod()");
+        System.out.println("ParentClass parentMethod()" + number + name);
     }
 
     public int getNumber() {

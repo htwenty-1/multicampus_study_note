@@ -22,7 +22,7 @@ public class Main {
 
 
         pc.func();
-        // pc.function();   // 이거는 안됨
+//        pc.function();   // 이거는 안됨
 
 
 

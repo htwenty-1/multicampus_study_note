@@ -8,6 +8,6 @@ public class ChildClass extends ParentClass{
 
         setNumber(1);
         name = "홍길동";
-        System.out.println("ChildClass childMethod()");
+        System.out.println("ChildClass childMethod()" + getNumber());
     }
 }
