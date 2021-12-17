@@ -19,9 +19,9 @@ public class Main {
         cls.func();
         cls.func();
 
-        MyClass mycls = new MyClass();
-        mycls.func();
-        mycls.func();
+//        MyClass mycls = new MyClass();
+//        mycls.func();
+//        mycls.func();
 
         // static변수는 한공간만 쓰기 때문에 1씩 계속 늘어남
 

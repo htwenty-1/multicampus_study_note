@@ -6,5 +6,4 @@ public interface PrintInterface {
 
     void print(NameCard nc);
 
-
 }

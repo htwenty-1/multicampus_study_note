@@ -15,6 +15,7 @@ public class Main {
         mycls.method();
         mycls.abstractMethod();
 
+        System.out.println("**************************");
         AbstractClass ac = new MyClass();   // 부모 클래스의 인스턴스로 자식 클래스를 생성하는것도 가능
 
         ac.method();
@@ -22,17 +23,18 @@ public class Main {
 
         ((MyClass)ac).func();               // MyClass my = (MyClass)ac;    my.func(); cast변환
 
+        System.out.println("**************************");
         YouClass you = new YouClass();
         you.abstractMethod();
 
         AbstractClass ac1 = new YouClass();
 
-
+        System.out.println("**************************");
         // 잠깐씩 쓸거면 그냥 이렇게 해도...
         AbstractClass ac2 = new AbstractClass() {
             @Override
             public void abstractMethod() {
-                System.out.println("AbstractClass abstractMethod(");
+                System.out.println("AbstractClass abstractMethod()");
             }
         };
 

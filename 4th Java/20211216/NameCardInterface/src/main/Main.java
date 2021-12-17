@@ -22,3 +22,22 @@ public class Main {
 
     }
 }
+
+/*
+
+    ParentClass --> int age; String name; void parentMethod();
+
+    ChildClass --> void childMethod();
+
+    ChildClass extends ParentClass ==> int age; String name; void parentMethod(); + void childMethod();
+
+    ParentClass ---> childMethod();
+
+    ParentClass pc = new ChildClass(); // 자식이 부모로 바뀌어
+
+    (ChildClass) ParentClass = pc;     //
+
+
+    프론트단 <---- jQuery Ajax, RestAPI, JSON ----> 백엔드단
+    Spring Framework =====> Spring Boot
+*/
