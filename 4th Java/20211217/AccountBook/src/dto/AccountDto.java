@@ -62,12 +62,6 @@ public class AccountDto {
 
     @Override
     public String toString() {
-        return "AccountDto{" +
-            "dateTime='" + dateTime + '\'' +
-            ", use='" + use + '\'' +
-            ", classify='" + classify + '\'' +
-            ", money=" + money +
-            ", memo='" + memo + '\'' +
-            '}';
+        return dateTime + "작성내역 " + classify + " " + use + " " + money + " " + memo;
     }
 }
