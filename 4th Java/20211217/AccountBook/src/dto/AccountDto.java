@@ -9,10 +9,13 @@ public class AccountDto {
     private int money;              // 금액
     private String memo;            // 메모(내용)
 
-    public AccountDto(String dateTime, String use, String classify, int money, String memo) {
+    public AccountDto(String classify) {
+        this.classify = classify;
+    }
+
+    public AccountDto(String dateTime, String use, int money, String memo) {
         this.dateTime = dateTime;
         this.use = use;
-        this.classify = classify;
         this.money = money;
         this.memo = memo;
     }
