@@ -46,6 +46,7 @@ public class Main {
           arrList[2] = 333인 상태
         */
 
+        System.out.println(arrList.get(1));
         System.out.println(arrList.get(0)); // 0번째 index를 get
 
         System.out.println("***********************************");

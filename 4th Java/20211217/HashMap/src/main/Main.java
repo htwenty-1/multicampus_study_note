@@ -28,7 +28,7 @@ public class Main {
         list.addFirst("Bears");     // LinkedList에만 있는 메서드
         // ===  list.add(0, "Bears");
         ArrayList<String> alist = new ArrayList<String>(list);      //LinkedList 객체를 ArrayList로 넘겨줌
-        // alist.add();
+         alist.add("Hanhwa");
 
         for (String str : alist) {
             System.out.println(str);
@@ -79,6 +79,7 @@ public class Main {
             System.out.println(v);
         }
 
+        System.out.println("******************************");
 
         // 삭제
         String val = hMap.remove(222);

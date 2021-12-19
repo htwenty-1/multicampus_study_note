@@ -9,14 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AccountDao {
-    private String dateTime;        // yyyy년 mm월 dd일
-    private String use;
-    private String classify;        // 수입 or 지출
-    private int money;              // 금액
-    private String memo;            // 메모(내용)
 
     Scanner sc = new Scanner(System.in);
-    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     // list
 //    private List<AccountDto> list = new LinkedList<>();
@@ -39,14 +33,14 @@ public class AccountDao {
 
         System.out.print("키워드를 입력하세요. >>> ");
         // 지출 카테고리(예: 극장구경, 데이트처럼 단어수준)
-        use = sc.next();
+        String use = sc.next();
 
         System.out.print("금액(숫자만)을 입력하세요. >> ");
-        money = sc.nextInt();
+        int money = sc.nextInt();
         sc.nextLine();
 
         System.out.print("메모할 내용을 입력하세요. >> ");
-        memo = sc.next();
+        String memo = sc.next();
 
         list.add(new AccountDto(now, classify, use, money, memo));
     }
@@ -54,7 +48,7 @@ public class AccountDao {
     // CRUD - categorization : 항목생성 시 수입, 지출여부
     public void categorization() {
         System.out.print("수입 또는 지출여부를 입력하세요. >> ");
-        classify = sc.next();
+        String classify = sc.next();
 
         while (true) {
             if (classify.equals("수입")) {
@@ -265,7 +259,7 @@ public class AccountDao {
                 result.append(accountDto.getClassify()).append(", ");
                 result.append(accountDto.getMoney()).append(", ");
                 result.append(accountDto.getMemo()).append(", ");
-                result.append(accountDto.getUse()).append(", ");
+                result.append(accountDto.getUse()).append(" ");
                 result.append("\n");
             }
             pw.print(result);
@@ -295,7 +289,7 @@ public class AccountDao {
 
         BufferedReader br = new BufferedReader(new FileReader(origin));
 
-        String line = "";
+        String line;
 
         while((line = br.readLine()) != null) {
             System.out.println(line);
