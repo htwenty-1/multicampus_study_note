@@ -17,18 +17,17 @@ public class Main {
         // youcls.setTotal(mycls.getName());
 
         mycls.method();
-        youcls.func();
-        hecls.method();
+        System.out.println();
+//        youcls.func();
+//        hecls.method();
 
-
-
-        System.out.println(youcls.toString());
-
-        Singleton s = Singleton.getInstance();
-        System.out.println(s);
-
-        s = Singleton.getInstance();
-        System.out.println(s);
+//        System.out.println(youcls.toString());
+//
+//        Singleton s = Singleton.getInstance();
+//        System.out.println(s);
+//
+//        s = Singleton.getInstance();
+//        System.out.println(s);
 
     }
 }
