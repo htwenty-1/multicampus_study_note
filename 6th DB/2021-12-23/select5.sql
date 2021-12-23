@@ -9,6 +9,11 @@
 */
 
 -- SELECT
+
+SELECT EMPLOYEE_ID, FIRST_NAME
+FROM EMPLOYEES
+WHERE EMPLOYEE_ID = 100;
+
 SELECT EMPLOYEE_ID, FIRST_NAME,
        (SELECT FIRST_NAME
        FROM EMPLOYEES
@@ -38,7 +43,7 @@ FROM EMPLOYEES;
 --------------------------------------------
 -- FROM
 SELECT EMPLOYEE_ID, SALARY                      --- 여기에 들어갈 내용은
-FROM(SELECT EMPLOYEE_ID, FIRST_NAME, SALARY     --- 여기서 내보내 준 내용만 들어가야함
+FROM(SELECT EMPLOYEE_ID, SALARY     --- 여기서 내보내 준 내용만 들어가야함
     FROM EMPLOYEES
     WHERE DEPARTMENT_ID = 80)
 WHERE SALARY > 10000
@@ -71,7 +76,7 @@ SELECT E.EMPLOYEE_ID,
        J.인원수
 FROM EMPLOYEES E, (SELECT JOB_ID, SUM(SALARY) AS "급여의 합계", COUNT(*) 인원수
                    FROM EMPLOYEES
-                   GROUP BY JOB_ID)
+                   GROUP BY JOB_ID) J
 WHERE E.JOB_ID = J.JOB_ID;
 
 ----------------------------------------------------------
@@ -86,5 +91,5 @@ SELECT  DEPARTMENT_ID, SALARY, FIRST_NAME
 FROM EMPLOYEES
 WHERE (DEPARTMENT_ID, SALARY) IN (SELECT DEPARTMENT_ID, MAX(SALARY)
                                   FROM EMPLOYEES
-                                  GROUP BY  DEPARTMENT_ID)
+                                  GROUP BY DEPARTMENT_ID)
 ORDER BY DEPARTMENT_ID;
