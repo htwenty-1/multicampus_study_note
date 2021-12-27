@@ -22,8 +22,10 @@
 <%--    </body>--%>
 <%--</form>--%>
 <body>
-    <form action="" method="get">
-        <input type="text" name="myName" />
+    <form action="myname" method="get">
+        <label>
+            <input type="text" name="myNameIs" />
+        </label>
         <input type="submit" value="제출" />
     </form>
 </body>

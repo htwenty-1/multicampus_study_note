@@ -9,18 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-//	@GetMapping("/test")
-//	public String test() {
-//		return "HELLO";
-//	}
-
-//	@GetMapping("/")
-//	public String getTime() {
-//		return "index";
-//	}
-
 	@GetMapping("/")
 	public String inputName() {
-		return "myNameIs";
+		return "index";
+	}
+
+
+	@GetMapping("/myname")
+	public String printName() {
+		return "myName";
 	}
 }
