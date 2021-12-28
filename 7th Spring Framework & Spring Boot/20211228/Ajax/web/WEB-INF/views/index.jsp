@@ -16,10 +16,10 @@
 
 <body>
 <%--기존방법--%>
-<a href="hello"></a>
+<a href="hello">hello로 가기</a>
 <%
     // response 객체를 사용하는 방법
-    response.sendRedirect("hello");
+    response.sendRedirect("home");
 %>
 </body>
 </html>
