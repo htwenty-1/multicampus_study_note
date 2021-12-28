@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hjun
@@ -14,9 +13,13 @@
 <head>
     <title>Home</title>
 </head>
+
 <body>
-<a href="/hello">hello로 이동</a>
-<a href="/home">home으로 이동</a>
-<a href="/world">world로 이동</a>
+<%--기존방법--%>
+<a href="hello"></a>
+<%
+    // response 객체를 사용하는 방법
+    response.sendRedirect("hello");
+%>
 </body>
 </html>

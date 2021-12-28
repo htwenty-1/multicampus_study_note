@@ -4,14 +4,14 @@
     <facet type="web" name="웹">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/EX2/web/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ajax/web/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
-          <root url="file://$MODULE_DIR$/EX2/web" relative="/" />
+          <root url="file://$MODULE_DIR$/Ajax/web" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/EX2/src/main/java" />
-          <root url="file://$MODULE_DIR$/EX2/src/main/resources" />
+          <root url="file://$MODULE_DIR$/Ajax/src/main/java" />
+          <root url="file://$MODULE_DIR$/Ajax/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
