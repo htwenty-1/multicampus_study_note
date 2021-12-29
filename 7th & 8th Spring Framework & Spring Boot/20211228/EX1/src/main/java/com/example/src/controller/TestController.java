@@ -40,7 +40,6 @@ public class TestController {
 	public String account(humanDto human) {
 		System.out.println(human.getName());
 		System.out.println(human.getAge());
-		Log.info("Yes");
 		return "ex";
 	}
 
