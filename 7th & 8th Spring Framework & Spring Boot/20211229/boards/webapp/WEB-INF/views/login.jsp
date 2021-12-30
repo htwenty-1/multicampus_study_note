@@ -40,7 +40,7 @@
             <tr>
                 <td colspan="2">
                     <input type="submit" value="login">
-                    <a href="regi">Sign Up</a>
+                    <a href="regi.do">Sign Up</a>
                 </td>
             </tr>
         </table>
