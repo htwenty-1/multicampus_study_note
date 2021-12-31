@@ -19,7 +19,12 @@ public class BbsServiceImpl implements BbsService{
     }
 
     @Override
-    public List<BbsDto> bbswrite() {
-        return dao.writebbs();
+    public boolean writebbs(BbsDto dto) {
+        return dao.writebbs(dto) > 0;
+    }
+
+    @Override
+    public BbsDto getBbs(int seq) {
+        return dao.getBbs(seq);
     }
 }

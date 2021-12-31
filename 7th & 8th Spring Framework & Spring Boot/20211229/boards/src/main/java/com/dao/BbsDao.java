@@ -7,6 +7,9 @@ import java.util.List;
 public interface BbsDao {
 
     List<BbsDto> bbslist();
-    List<BbsDto> writebbs();
+
+    int writebbs(BbsDto dto);
+
+    BbsDto getBbs(int seq);
 
 }

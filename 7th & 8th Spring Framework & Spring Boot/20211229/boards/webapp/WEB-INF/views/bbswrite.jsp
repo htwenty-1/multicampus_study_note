@@ -16,59 +16,58 @@ request.getAttribute() ===> 데이터를 다른곳으로 전송할 때
 request.getSession.getAttribute() ===> 세션에 저장한 후 다른 곳으로 넘겨줌.
 --%>
 
+<!DOCTYPE html>
 <html>
 <head>
-    <title>글 작성하기</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
-    <h1>글 추가</h1>
 
-    <div align="center">
+<h1>글추가</h1>
 
-        <form action="bbswriterAf.do" method="post">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <td>
-                        <input type="text" name="id" size="70px" id="id" value=<%mem.getId()%> readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Title</th>
-                    <td>
-                        <input type="text" name="title" id="title" size="70px" />
-                    </td>
-                </tr>
+<div align="center">
 
-                <tr>
-                    <th>내용</th>
-                    <td>
-                        <textarea rows="20px" cols="80" name="content" id="content"></textarea>
-                    </td>
-                </tr>
+    <form action="bbswriteAf.do" method="post">
 
-                <tr>
-                    <td colspan="2">
-                        <button type="submit" onclick="onSubmit()">Upload</button>
-                    </td>
-                </tr>
+        <table border="1" style="width: 1000px">
+            <tr>
+                <th>아이디</th>
+                <td>
+                    <input type="text" name="id" size="70px" value="<%=mem.getId() %>" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>
+                    <input type="text" name="title" size="70px">
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    <textarea rows="20" cols="80" name="content"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="글쓰기">
+                </td>
+            </tr>
 
-            </table>
-        </form>
+        </table>
 
-    </div>
 
-    <script>
-        function onSubmit () {
-            const title = document.getElementById("title").value;
-            const content = document.getElementById("content").value;
 
-            if (title !== null && content !== null) {
-                <%
+    </form>
 
-                %>
-            }
-        }
-    </script>
+
+</div>
+
+
+
+
 </body>
 </html>
+
+

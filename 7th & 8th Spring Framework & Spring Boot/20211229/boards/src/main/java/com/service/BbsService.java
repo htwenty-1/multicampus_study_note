@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface BbsService {
     List<BbsDto> bbslist();
-    List<BbsDto> bbswrite();
+    boolean writebbs(BbsDto dto);
+    BbsDto getBbs(int seq);
 }

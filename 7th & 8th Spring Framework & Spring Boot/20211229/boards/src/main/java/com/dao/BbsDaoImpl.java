@@ -15,12 +15,20 @@ public class BbsDaoImpl implements BbsDao{
 
     String ns = "bbs.";
 
+    @Override
     public List<BbsDto> bbslist() {
         return sec.selectList(ns + "bbslist");
     }
 
-    public List<BbsDto> writebbs() {
-        return sec.selectList(ns + "writebbs");
+    @Override
+    public int writebbs(BbsDto dto) {
+        int cnt = sec.insert(ns + "writebbs", dto);
+        return cnt;
+    }
+
+    @Override
+    public BbsDto getBbs(int seq) {
+        return sec.selectOne(ns + "getBbs", seq);
     }
 
 }

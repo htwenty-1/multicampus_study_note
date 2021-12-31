@@ -30,12 +30,27 @@ public class BbsController {
         return "bbswrite";
     }
 
-    @RequestMapping(value="writebbs.do", method= RequestMethod.GET)
-    public String writebbs(Model model) {
-        System.out.println("BbsController writebbs()" + new Date());
-        List<BbsDto> list = service.bbslist();
-        model.addAttribute("writebbslist", list);
-        return "bbswriteAf";
+    @RequestMapping(value="bbswriteAf.do", method= RequestMethod.POST)
+    public String bbswriteAf(BbsDto dto) {
+        System.out.println("BbsController bbswriteAf()" + new Date());
+        System.out.println(dto.toString());
+
+        boolean b = service.writebbs(dto);
+        if (b == true) {
+            System.out.println("글이 정상적으로 업로드 됨.");
+        }
+
+        return "redirect:/bbslist.do";
+    }
+
+    @RequestMapping(value="bbsdetail.do", method= RequestMethod.GET)
+    public String bbsdetail(int seq, Model model) {
+        System.out.println("seq: " + seq);
+
+        BbsDto bbs = service.getBbs(seq);
+        model.addAttribute("bbs", bbs);
+
+        return "bbsdetail";
     }
 
 }

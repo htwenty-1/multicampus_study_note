@@ -11,55 +11,61 @@
 <%
     List<BbsDto> bbslist = (List<BbsDto>) request.getAttribute("bbslist");
 %>
-<html>
-<head>
-    <title>Boards</title>
 </head>
 <body>
-    <div align="center">
-        <table border="1" style="width: 1000px">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Title</th>
-                    <th>Writer</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <%
-                    if(bbslist == null || bbslist.size() == 0) {
-                %>
-                       <tr>
-                           <td colspan="3">작성된 글이 없습니다.</td>
-                       </tr>
+<h1>게시판</h1>
 
-                <%
-                    } else {
-                        for (int i = 0; i < bbslist.size(); i++) {
-                            BbsDto bd = bbslist.get(i);
-                %>
-                            <th>
-                                <tr><%=i+1%></tr>
-                                <td>
-                                    <a href="bbsdetail.do?seq=<%= bd.getSeq()%>">
-                                        <%= bd.getTitle()%>
-                                    </a>
-                                </td>
-                                <td><%= bd.getId()%></td>
-                            </th>
-                <%
+<div align="center">
+    <!--   attribute  property   -->
+    <table class="table table-hover" style="width: 1000px">
+        <!-- <col width="30"><col width="200"><col width="80"> -->
 
-                        }
-                    }
-                %>
+        <thead>
+        <tr>
+            <th>번호</th><th>제목</th><th>seq</th><th>작성자</th>
+        </tr>
+        </thead>
 
+        <tbody>
+        <%
+            if(bbslist == null || bbslist.size() == 0){
+        %>
+        <tr>
+            <td colspan="3">작성된 글이 없습니다</td>
+        </tr>
+        <%
+        }else{
 
-            </tbody>
-        </table>
-    </div>
-    <div align="center">
-        <a href="bbswrite.do">글쓰기</a>
-    </div>
+            for(int i = 0;i < bbslist.size(); i++){
+                BbsDto bbs = bbslist.get(i);
+        %>
+        <tr>
+            <th><%=i+1 %></th>
+            <td>
+                <a href="bbsdetail.do?seq=<%=bbs.getSeq() %>">
+                    <%=bbs.getTitle() %>
+                </a>
+            </td>
+            <td><%=bbs.getSeq() %></td>
+            <td align="center"><%=bbs.getId() %></td>
+        </tr>
+        <%
+                }
+            }
+        %>
+        </tbody>
+    </table>
+</div>
+<br>
+<div align="center">
+    <a href="bbswrite.do">글쓰기</a>
+</div>
+
+<!--
+<script type="text/javascript">
+location.href = "bbslist.do"; -> GET
+</script>
+ -->
 </body>
 </html>
