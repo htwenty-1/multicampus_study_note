@@ -20,6 +20,20 @@ public class BbsDto implements Serializable {
 
     public BbsDto() {}
 
+    /*
+        ref : 그룹 번호
+        step: 행 번호
+        depth: 깊이 번호
+        ref - step - depth 순으로
+        -------------------------
+        세번째 글                                (2 - 0 - 0)
+        두번째 글                                (1 - 0 - 0)
+          ㄴ 두번째 글의 두번째 답글                 (1 - 1 - 1)
+             ㄴ 두번째 글의 두번째 답글의 첫번째 답글   (1 - 2 - 2)
+          ㄴ 두번째 글의 첫번째 답글                 (1 - 3 - 1)
+        첫번째 글                                (0 - 0 - 0)
+    */
+
     public BbsDto(int seq, String id, int ref, int step, int depth, String title, String content, String wdate, int del, int readcoount) {
         super();
         this.seq = seq;

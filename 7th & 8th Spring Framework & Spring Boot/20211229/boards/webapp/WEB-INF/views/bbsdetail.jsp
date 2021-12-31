@@ -82,14 +82,14 @@
 
 <script type="text/javascript">
     function answerbbs( seq ) {
-        location.href = "answer.do?seq=" + seq;
+        location.href = "answer.do?seq="+seq;
     }
 
     function updatebbs( seq ) {
-        location.href = "updatebbs.do?seq=" + seq;
+        location.href = "updatebbs.do?seq="+seq;
     }
     function deletebbs( seq ) {
-        location.href = "deletebbs.do?seq=" + seq;
+        location.href = "deletebbs.do?seq="+seq;
     }
 </script>
 

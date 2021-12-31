@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.dto.BbsDto;
+import com.dto.BbsParam;
 import com.service.BbsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,9 @@ public class BbsController {
     BbsService service;
 
     @RequestMapping(value= "bbslist.do", method= RequestMethod.GET)
-    public String bbslist(Model model) {
+    public String bbslist(Model model, BbsParam param) {
         System.out.println("BbsController bbslist()" + new Date());
-        List<BbsDto> list = service.bbslist();
+        List<BbsDto> list = service.bbslist(param);
         model.addAttribute("bbslist", list);
         return "bbslist";
     }
@@ -30,9 +31,9 @@ public class BbsController {
         return "bbswrite";
     }
 
-    @RequestMapping(value="bbswriteAf.do", method= RequestMethod.POST)
+    @RequestMapping(value="bbswriteAf.do", method= RequestMethod.GET)
     public String bbswriteAf(BbsDto dto) {
-        System.out.println("BbsController bbswriteAf()" + new Date());
+        System.out.println("BbsController bbswriteAf() " + new Date());
         System.out.println(dto.toString());
 
         boolean b = service.writebbs(dto);
@@ -51,6 +52,28 @@ public class BbsController {
         model.addAttribute("bbs", bbs);
 
         return "bbsdetail";
+    }
+
+    @RequestMapping(value="answer.do", method= RequestMethod.GET)
+    public String answer (int seq, Model model) {
+        System.out.println("BbsController answer() " + new Date());
+
+        BbsDto bbs = service.getBbs(seq);
+        model.addAttribute("bbs", bbs);
+
+        return "bbsanswer";
+
+    }
+
+    @RequestMapping(value="answerAf.do", method= RequestMethod.GET)
+    public String answerAf(int seq, BbsDto dto) {
+        System.out.println("BbsController answerAf() " + new Date());
+
+        // DB 접근 ==> update와 insert 다 해야함
+        dto.setSeq(seq);
+
+
+        return "redirect:/bbslist.do";
     }
 
 }

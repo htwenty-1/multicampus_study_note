@@ -28,19 +28,19 @@ request.getSession.getAttribute() ===> 세션에 저장한 후 다른 곳으로 
 
 <div align="center">
 
-    <form action="bbswriteAf.do" method="post">
+    <form action="bbswriteAf.do" method="get">
 
-        <table border="1" style="width: 1000px">
+        <table class="table table-hover" style="width: 1000px">
             <tr>
                 <th>아이디</th>
                 <td>
-                    <input type="text" name="id" size="70px" value="<%=mem.getId() %>" readonly="readonly">
+                    <input type="text" name="id" size="70px" value="<%=mem.getId() %>" readonly="readonly" />
                 </td>
             </tr>
             <tr>
                 <th>제목</th>
                 <td>
-                    <input type="text" name="title" size="70px">
+                    <input type="text" name="title" size="70px" />
                 </td>
             </tr>
             <tr>
@@ -51,7 +51,7 @@ request.getSession.getAttribute() ===> 세션에 저장한 후 다른 곳으로 
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="글쓰기">
+                    <input type="submit" value="글쓰기" />
                 </td>
             </tr>
 

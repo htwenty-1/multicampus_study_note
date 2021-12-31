@@ -2,6 +2,7 @@ package com.service;
 
 import com.dao.BbsDao;
 import com.dto.BbsDto;
+import com.dto.BbsParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,8 @@ public class BbsServiceImpl implements BbsService{
     BbsDao dao;
 
     @Override
-    public List<BbsDto> bbslist() {
-        return dao.bbslist();
+    public List<BbsDto> bbslist(BbsParam param) {
+        return dao.bbslist(param);
     }
 
     @Override
@@ -26,5 +27,18 @@ public class BbsServiceImpl implements BbsService{
     @Override
     public BbsDto getBbs(int seq) {
         return dao.getBbs(seq);
+    }
+
+    @Override
+    public void reply(BbsDto dto) {
+        int n = dao.replyBbsUpdate(dto);
+        if(n == 0) {
+            System.out.println("replyBbsUpdate fail~");
+        }
+
+        n = dao.replyBbsInsert(dto);
+        if(n == 0) {
+            System.out.println("replyBbsInsert fail~");
+        }
     }
 }

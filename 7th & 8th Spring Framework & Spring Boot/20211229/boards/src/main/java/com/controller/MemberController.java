@@ -20,7 +20,7 @@ public class MemberController {
         return "login";
     }
 
-    @RequestMapping(value = "regi.do", method = RequestMethod.GET)
+    @RequestMapping(value = "regi.do", method = RequestMethod.POST)
     public String regi() {
         return "regi";
     }
@@ -52,7 +52,7 @@ public class MemberController {
         }
     }
 
-    @PostMapping("loginAf.do")
+    @RequestMapping(value = "loginAf.do", method = RequestMethod.POST)
     public String loginAf(MemberDto dto, HttpServletRequest req) {  // == request
         MemberDto md = service.login(dto);
         if(md != null) {        // 회원 데이터 찾음
