@@ -28,7 +28,7 @@ request.getSession.getAttribute() ===> 세션에 저장한 후 다른 곳으로 
 
 <div align="center">
 
-    <form action="bbswriteAf.do" method="get">
+    <form action="bbswriteAf.do" method="post">
 
         <table class="table table-hover" style="width: 1000px">
             <tr>

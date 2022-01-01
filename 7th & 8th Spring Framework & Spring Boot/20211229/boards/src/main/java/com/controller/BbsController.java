@@ -31,13 +31,13 @@ public class BbsController {
         return "bbswrite";
     }
 
-    @RequestMapping(value="bbswriteAf.do", method= RequestMethod.GET)
+    @RequestMapping(value="bbswriteAf.do", method= RequestMethod.POST)
     public String bbswriteAf(BbsDto dto) {
         System.out.println("BbsController bbswriteAf() " + new Date());
         System.out.println(dto.toString());
 
         boolean b = service.writebbs(dto);
-        if (b == true) {
+        if (b) {
             System.out.println("글이 정상적으로 업로드 됨.");
         }
 

@@ -10,5 +10,4 @@ public interface BbsService {
     boolean writebbs(BbsDto dto);
     BbsDto getBbs(int seq);
     void reply(BbsDto dto);
-
 }

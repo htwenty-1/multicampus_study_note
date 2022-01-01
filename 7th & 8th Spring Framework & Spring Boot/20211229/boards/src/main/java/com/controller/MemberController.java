@@ -20,7 +20,7 @@ public class MemberController {
         return "login";
     }
 
-    @RequestMapping(value = "regi.do", method = RequestMethod.POST)
+    @RequestMapping(value = "regi.do", method = RequestMethod.GET)
     public String regi() {
         return "regi";
     }

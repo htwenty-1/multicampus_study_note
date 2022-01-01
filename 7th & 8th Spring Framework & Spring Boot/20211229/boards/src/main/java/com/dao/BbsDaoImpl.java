@@ -23,8 +23,7 @@ public class BbsDaoImpl implements BbsDao{
 
     @Override
     public int writebbs(BbsDto dto) {
-        int cnt = sec.insert(ns + "writebbs", dto);
-        return cnt;
+        return sec.insert(ns + "writebbs", dto);
     }
 
     @Override
@@ -34,14 +33,12 @@ public class BbsDaoImpl implements BbsDao{
 
     @Override
     public int replyBbsUpdate(BbsDto dto) {
-        int n = sec.update(ns + "replyBbsUpdate", dto);
-        return n;
+        return sec.update(ns + "replyBbsUpdate", dto);
     }
 
     @Override
     public int replyBbsInsert(BbsDto dto) {
-        int n = sec.insert(ns + "replyBbsInsert", dto);
-        return n;
+        return sec.insert(ns + "replyBbsInsert", dto);
     }
 
 }

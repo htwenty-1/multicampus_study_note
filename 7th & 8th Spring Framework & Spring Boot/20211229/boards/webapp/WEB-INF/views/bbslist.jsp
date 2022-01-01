@@ -22,7 +22,7 @@
             ts += nbsp;
         }
 
-        return depth == 0 ? "" : ts + res;
+        return depth == 0 ? "" : ts+res;
 
     }
 %>
@@ -45,9 +45,9 @@
         <!-- <col width="30"><col width="200"><col width="80"> -->
 
         <thead>
-        <tr>
-            <th>번호</th><th>제목</th><th>정보</th><th>작성자</th>
-        </tr>
+            <tr>
+                <th>번호</th><th>제목</th><th>정보</th><th>작성자</th>
+            </tr>
         </thead>
 
         <tbody>
@@ -58,7 +58,7 @@
             <td colspan="3">작성된 글이 없습니다</td>
         </tr>
         <%
-        }else{
+        } else {
 
             for(int i = 0;i < bbslist.size(); i++){
                 BbsDto bbs = bbslist.get(i);

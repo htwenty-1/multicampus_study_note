@@ -46,7 +46,9 @@
             <tr>
                 <th>내용</th>
                 <td align="center">
-                    <textarea rows="15" cols="100" readonly="readonly"><%=bbs.getContent() %></textarea>
+                    <label>
+                        <textarea rows="15" cols="100" readonly="readonly"><%=bbs.getContent() %></textarea>
+                    </label>
                 </td>
             </tr>
         </table>
@@ -61,19 +63,25 @@
                     <tr>
                         <th>아이디</th>
                         <td>
-                            <input type="text" name="id" size="70px" value="<%=mem.getId() %>" readonly="readonly">
+                            <label>
+                                <input type="text" name="id" size="70px" value="<%=mem.getId() %>" readonly="readonly">
+                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th>제목</th>
                         <td>
-                            <input type="text" name="title" size="70px">
+                            <label>
+                                <input type="text" name="title" size="70px">
+                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th>내용</th>
                         <td>
-                            <textarea rows="20" cols="80" name="content"></textarea>
+                            <label>
+                                <textarea rows="20" cols="80" name="content"></textarea>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -86,6 +94,7 @@
 
         </form>
 
+</div>
 </div>
 
 
