@@ -25,6 +25,16 @@ public class Magazine {
         this.desc = desc;
     }
 
+    public Magazine(String isbn, String title, String author, String publisher, int year, int month, int price) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.year = year;
+        this.month = month;
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return isbn + "\t | "+ title + "\t | " + author + " | " + publisher + "\t | " + price + "\t | " + year + "." + month;
