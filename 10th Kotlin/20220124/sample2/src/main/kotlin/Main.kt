@@ -58,6 +58,7 @@ fun main(args: Array<String>) {
         println("$n : ${array[n]}")
     }
 
+    var array = arrayOf(10, 20, 30, 40, 50)
     for(i in 0..array.size - 1) {
         println("array[$i] = ${array[i]}")
     }
