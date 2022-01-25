@@ -22,6 +22,8 @@ fun main(args: Array<String>) {
     localFunc()
     println("global: $global")
 
+    println(funcParam(1, 2, ::sum))
+
 }
 
 fun sum(a:Int, b:Int) = a + b

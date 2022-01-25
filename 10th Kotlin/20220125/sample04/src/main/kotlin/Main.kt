@@ -22,7 +22,9 @@ fun main(args: Array<String>) {
     }
     */
 
-    var amount:Int = 600
+
+    // var amount:Int = 600
+    var amount:Int = 1000
 
     try {
         amount -= 100
@@ -32,6 +34,18 @@ fun main(args: Array<String>) {
     }
 
     println("program end")
+
+
+
+//    var x:Int = 123
+//
+//    try {
+//        x = null!!
+//        println("x에 정상적으로 대입됨")
+//    } catch (e:Exception) {
+//        e.printStackTrace()
+//        println("Exception 발생!!")
+//    }
 
 }
 
