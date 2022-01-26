@@ -1,3 +1,5 @@
+// 오버라이드
+
 fun main(args: Array<String>) {
 
     val master = Master()
@@ -28,6 +30,7 @@ class Cat(name:String, override var category: String) : Pet, Animal(name) {
     override var species: String = "Cat"
     override fun feeding() {
         println("Feeding Cat")
+        println("Cat Name: $name")
     }
 }
 
@@ -36,6 +39,7 @@ class Dog(name:String, override var category: String) : Pet, Animal(name) {
     override var species: String = "Dog"
     override fun feeding() {
         println("Feeding Dog")
+        println("Dog Name: $name")
     }
 }
 
