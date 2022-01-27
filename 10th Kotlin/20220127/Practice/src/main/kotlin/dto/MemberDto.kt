@@ -21,6 +21,7 @@ open class Human(var index:Int, var number: Int, var name: String, var age:Int, 
     open var hit: Int
         get() { return hit }
         set(value) { hit = value }
+
 }
 
 class Pitcher(index: Int, number: Int, name: String, age:Int, height: Double, ref:Int, override var win:Int, override var lost:Int, var defense:Double) : Human(index, number, name, age, height, ref) {
