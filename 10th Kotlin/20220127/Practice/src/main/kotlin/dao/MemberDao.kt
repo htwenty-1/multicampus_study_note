@@ -94,22 +94,6 @@ class MemberDao {
     // UPDATE
     // 수정
 
-    private var Human.win: Int
-        get() { return win }
-        set(value) { win = value }
-
-    private var Human.lost: Int
-        get() { return lost }
-        set(value) { lost = value }
-
-    private var Human.bat: Int
-        get() { return bat }
-        set(value) { bat = value }
-
-    private var Human.hit: Int
-        get() { return hit }
-        set(value) { hit = value }
-
     fun editTeamList() {
         printAllData()
         print("수정할 선수의 순번을 입력하세요 >> ")
@@ -215,7 +199,7 @@ class MemberDao {
                     5 -> {
                         print("변경할 타수를 입력하세요 >> ")
                         val newBat:Int = readLine()!!.toInt()
-                        teamList[wantEdit].bat = newBat
+                        teamList[wantEdit].batCount = newBat
                         println("변경이 완료 되었습니다.")
                         break
                     }
