@@ -162,6 +162,24 @@ class MemberDao {
 
     // 정렬
     fun hitAvgSort() {
+        /*
+        val sortList:List<Batter>? = list?.filterIsInstance<Batter>()
+        for (h in sortList!!) {
+            // println(h.toString())
+        }
+
+        val sorted = sortList?.sortedByDescending { it -> it.batAvg }
+        for(h in sorted!!) {
+            println(h)
+        }
+        */
+
+        val sortList:List<Batter>? = list?.filterIsInstance<Batter>()?.sortedByDescending { it -> it.batAvg }
+        if (sortList != null) {
+            for (h in sortList) {
+                println(h.toString())
+            }
+        }
 
     }
 

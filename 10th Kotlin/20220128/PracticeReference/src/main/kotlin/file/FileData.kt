@@ -10,9 +10,13 @@ class FileData {
     constructor(fileName:String){
         var dir:String = "User/user/hwangduil/test"
         file = File("$dir/$fileName.rtf")
+
+        filePath = "$dir/$fileName.rtf"
     }
-    // java
+
     private var file: File? = null
+    private var filePath:String? = null
+
     fun createFile() {
         if(file!!.createNewFile()) {
             println(file!!.name + ".rtf 파일을 생성하였습니다.")
@@ -22,6 +26,7 @@ class FileData {
     }
 
     fun fileSave(arrStr: Array<String?>) {
+        /*
         val fileWriter = FileWriter(file)
         val bw = BufferedWriter(fileWriter)
         val pw = PrintWriter(bw)
@@ -31,11 +36,16 @@ class FileData {
         }
 
         pw.close()
+        */
+
+        File(filePath).printWriter().use { out -> for(str in arrStr) { out.println(str) } }
+
     }
 
     fun fileLoad():List<Human>? {
         val list:MutableList<Human> = ArrayList()
 
+        /*
         val fileReader = FileReader(file)
         val br = BufferedReader(fileReader)
         var str = br.readLine()
@@ -64,9 +74,43 @@ class FileData {
                 )
             }
 
+            list.add(value)
+
             str = br.readLine()
 
-            list.add(value)
+        }
+        */
+
+        File(filePath).useLines {
+            lines -> lines.forEach {
+                println(it)
+
+                var split = it.split("-".toRegex()).toTypedArray()
+                val position = split[0].toInt()
+
+                var value:Human = if (position < 2000) {    // 투수
+                    Pitcher(split[0].toInt(),
+                        split[1],
+                        split[2].toInt(),
+                        split[3].toDouble(),
+                        split[4].toInt(),
+                        split[5].toInt(),
+                        split[6].toDouble()
+                    )
+                } else {    // 타자
+                    Batter(split[0].toInt(),
+                        split[1],
+                        split[2].toInt(),
+                        split[3].toDouble(),
+                        split[4].toInt(),
+                        split[5].toInt(),
+                        split[6].toDouble()
+                    )
+                }
+
+                list.add(value)
+
+            }
         }
 
         return list
