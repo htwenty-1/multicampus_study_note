@@ -187,6 +187,8 @@ class MemberDao {
         }
         */
 
+        // filterIsInstance : Returns a list containing all elements that are instances of specified type parameter R.
+        // sortedByDescending : 내림차순으로 정렬
         val sortList:List<Batter>? = list?.filterIsInstance<Batter>()?.sortedByDescending { it -> it.batAvg }
         if (sortList != null) {
             for (h in sortList) {
