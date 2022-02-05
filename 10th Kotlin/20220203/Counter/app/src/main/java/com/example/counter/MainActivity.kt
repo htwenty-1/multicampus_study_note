@@ -39,18 +39,18 @@ class MainActivity : AppCompatActivity()/*, View.OnClickListener*/ {
         val setNumberBtn = findViewById<Button>(R.id.setNumber)
 
         setNumberBtn.setOnClickListener {
-            if(setNumber.text != null) {
+            // if(setNumber.text != null) {
                 number.text = setNumber.text
                 cnt = number.text.toString().toInt()
-            } else {
-                AlertDialog.Builder(this@MainActivity)
-                    .setTitle("잘못된 입력입니다!")
-                    .setMessage("숫자가 입력되지 않아 작동할 수 없습니다. 숫자를 입력해주세요.")
-                    .setCancelable(false)
-                    .setNeutralButton("닫기", DialogInterface.OnClickListener {
-                        _, _ ->
-                    }).show()
-            }
+            // } else {
+            //     AlertDialog.Builder(this@MainActivity)
+            //         .setTitle("잘못된 입력입니다!")
+            //         .setMessage("숫자가 입력되지 않아 작동할 수 없습니다. 숫자를 입력해주세요.")
+            //         .setCancelable(false)
+            //         .setNeutralButton("닫기", DialogInterface.OnClickListener {
+            //             _, _ ->
+            //         }).show()
+            //  }
         }
     }
 
