@@ -1,7 +1,11 @@
 package com.example.sample30
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -35,12 +39,39 @@ class ItemViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
         userPay.text = dataVo.pay.toString()
         userAddress.text = dataVo.address
 
+
+        itemView.setOnClickListener {
+            Log.d("", "${dataVo.name} ${dataVo.photo}")
+
+            // 장면이동
+            Intent(context, ProfileDetailActivity::class.java).apply {
+
+                // Spring Framework의 Model과 같음
+                putExtra("data", dataVo)
+
+                // 새로운 activity 추가(원래 화면에 덮어 씌우기), ProfileDetailActivity로 이동
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }.run { context.startActivity(this) }
+        }
     }
 
 }
 
 class CustomAdapter(private val context:Context, private val dataList:ArrayList<DataVo>) : RecyclerView.Adapter<ItemViewHolder>() {
 
+    // 실제로 생성해주는 것
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.view_item_layout, parent, false)
+        return ItemViewHolder(view)
+    }
 
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.bind(dataList[position], context)
+    }
+
+    // 가장 먼저 실행됨
+    override fun getItemCount(): Int {
+        return dataList.size
+    }
 }
 
