@@ -3,7 +3,7 @@
 ## 개요
 
 - 시큐어 코딩을 적용한 앱개발자 양성과정 강의 노트
-- 매일 업로드~
+
 
 ## 교육과정
 
@@ -18,5 +18,5 @@
 |  7   | Spring Framework               |  80  |     O      | 2021.12.27. ~ 2022.12.31. |
 |  8   | Secure Coding                  |  40  |     X      | 2022.1.4. ~ 2022.1.10.|
 |  9   | Semi Project                   |  64  |<a href="https://github.com/htwenty-1/mulcam-semi-prj">게시판 구현</a>|2022.1.11. ~ 2022.1.20.|
-|  10  | Kotlin Programming             | 32   |    O      | 2022.1.21 ~ 2022.1.27.|
-
+|  10  | Kotlin Programming             | 32   |    O      | 2022.1.21. ~ 2022.1.27.|
+|  11  | Android with Kotlin            | 64   |    O      | 2022.1.27. ~ 2022.2.11.|
