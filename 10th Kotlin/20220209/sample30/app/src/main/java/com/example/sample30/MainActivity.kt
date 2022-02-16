@@ -31,6 +31,5 @@ class MainActivity : AppCompatActivity() {
         recycleView.layoutManager = layout
 
         recycleView.setHasFixedSize(true)       // 리스트에 컴포넌트가 균등하게 들어가도록 함
-
     }
 }
