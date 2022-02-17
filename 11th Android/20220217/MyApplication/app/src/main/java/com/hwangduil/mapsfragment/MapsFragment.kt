@@ -1,13 +1,17 @@
-package com.hwangduil.googlemaps
+package com.hwangduil.mapsfragment
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.pm.PathPermission
+import android.app.Activity
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -24,33 +28,36 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.hwangduil.googlemaps.databinding.ActivityMapsBinding
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsFragment(var activity: Activity) : Fragment(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityMapsBinding
+    /*private val callback = OnMapReadyCallback { googleMap ->
+        val sydney = LatLng(-34.0, 151.0)
+        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }*/
 
+    // 위치정보 권한추가
     lateinit var locationPermission: ActivityResultLauncher<Array<String>>
 
+    private lateinit var mMap: GoogleMap
+
     // 위치서비스가 GPS를 사용하여 위치 확인(gradle에 추가 필요)
-    lateinit var fusedLocationClient:FusedLocationProviderClient
+    lateinit var fusedLocationClient: FusedLocationProviderClient
 
     // 위치값 요청에 대한 갱신 정보를 받는 변수
-    lateinit var locationCallback:LocationCallback
+    lateinit var locationCallback: LocationCallback
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityMapsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         // 권한 승인
         locationPermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
-            if(results.all { it.value }) {
-                startProcess()
-            } else {    // 문제 발생 시
-                Toast.makeText(this, "권한 승인이 필요합니다.", Toast.LENGTH_LONG).show()
+            if(!results.all { it.value }) {
+                Toast.makeText(activity, "권한 승인이 필요합니다.", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -62,14 +69,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         )
 
+        return inflater.inflate(R.layout.fragment_maps, container, false)
     }
 
-    fun startProcess() {
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)   // 상속받은 OnMapReadyCallback
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        mapFragment?.getMapAsync(this)
     }
 
-    // 위치정보 실시간 업데이트
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        mMap = googleMap!!
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity)
+        updateLocation()
+    }
+
     @SuppressLint("MissingPermission")
     fun updateLocation() {
         val locationRequest = LocationRequest.create()
@@ -93,11 +108,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 권한 처리
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
-        // setLocation(37.4923219, 126.91161889999998)
+
     }
 
-    // Google Map을 준비하는 작업을 진행함.
-    fun setLastLocation(lastLocation:Location) {
+    fun setLastLocation(lastLocation: Location) {
         val latlng = LatLng(lastLocation.latitude, lastLocation.longitude)
 
         // 위도와 경도에 대한 옵션
@@ -109,10 +123,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.clear()
         mMap.addMarker(makerOptions)
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
-
     }
 
-    // 본인이 설정한 위도, 경도로 적용하는 경우
     fun setLocation(latitude:Double, longitude:Double) {
         val latlng = LatLng(latitude, longitude)
 
@@ -125,13 +137,5 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.clear()
         mMap.addMarker(makerOptions)
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
-    }
-
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        updateLocation()
     }
 }
