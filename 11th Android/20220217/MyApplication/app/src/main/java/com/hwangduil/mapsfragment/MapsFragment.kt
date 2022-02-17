@@ -1,26 +1,18 @@
 package com.hwangduil.mapsfragment
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.location.Location
-import androidx.fragment.app.Fragment
-
 import android.os.Bundle
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -79,12 +71,13 @@ class MapsFragment(var activity: Activity) : Fragment(), OnMapReadyCallback {
     }
 
 
-    override fun onMapReady(googleMap: GoogleMap?) {
-        mMap = googleMap!!
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity)
-        updateLocation()
+        // updateLocation()
     }
 
+    /*
     @SuppressLint("MissingPermission")
     fun updateLocation() {
         val locationRequest = LocationRequest.create()
@@ -110,7 +103,9 @@ class MapsFragment(var activity: Activity) : Fragment(), OnMapReadyCallback {
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
 
     }
+    */
 
+    /*
     fun setLastLocation(lastLocation: Location) {
         val latlng = LatLng(lastLocation.latitude, lastLocation.longitude)
 
@@ -124,6 +119,7 @@ class MapsFragment(var activity: Activity) : Fragment(), OnMapReadyCallback {
         mMap.addMarker(makerOptions)
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
     }
+    */
 
     fun setLocation(latitude:Double, longitude:Double) {
         val latlng = LatLng(latitude, longitude)
