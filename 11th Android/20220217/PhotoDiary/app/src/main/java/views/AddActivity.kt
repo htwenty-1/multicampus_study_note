@@ -2,28 +2,49 @@ package views
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.Instrumentation.ActivityResult
+import android.content.ContentProviderClient
 import android.content.ContentValues
+import android.content.ContentValues.TAG
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
+import android.location.Address
+import android.location.Geocoder
+import android.location.Location
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
+import com.hwangduil.photodiary.MainActivity
 import com.hwangduil.photodiary.databinding.ActivityAddBinding
+import dbHelper.DBHelper
+import dto.DataDto
 import java.io.FileOutputStream
+import java.io.IOException
 import java.text.SimpleDateFormat
 
 class AddActivity : AppCompatActivity(), View.OnClickListener {
 
+    // binding을 통해 컴포넌트에 자유롭게 접근함.
     private lateinit var binding:ActivityAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +52,31 @@ class AddActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 권한 부여
+        locationPermission = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()) { results ->
+            if(!results.all{it.value}) {
+                Toast.makeText(this, "권한이 부여되지 않음", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        locationPermission.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+        )
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        updateLocation()
+
+        // 상속받은 OnClickListener 적용
         binding.addInitBtn.setOnClickListener(this)
         binding.takePictureBtn.setOnClickListener(this)
     }
 
+    // 상속받은 OnClickListener 구현
     override fun onClick(v: View?) {
         when(v) {
             // 다시 쓰기 버튼
@@ -50,8 +92,24 @@ class AddActivity : AppCompatActivity(), View.OnClickListener {
                 callCamera()
             }
 
-            binding.saveBtn -> {
+            // 저장 버튼
+            binding.addSaveBtn -> {
+                Log.d("OnClick", "save 버튼 클릭")
 
+                val addr = getAddress(latitude, longitude)
+
+                DBHelper.getInstance(this, "photo_diary.db")
+                        .insert(DataDto(0,
+                                        binding.imgPathText.text.toString(),
+                                        addr,
+                                        binding.addEditTitle.text.toString(),
+                                        binding.addEditContent.text.toString(),
+                                        ""))
+
+                Toast.makeText(this, "저장아 완료되었습니다!", Toast.LENGTH_LONG).show()
+
+                val itt = Intent(this, MainActivity::class.java)
+                startActivity(itt)
             }
         }
     }
@@ -124,7 +182,7 @@ class AddActivity : AppCompatActivity(), View.OnClickListener {
 
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos)
             fos.close()
-
+1
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 CV.clear()
                 CV.put(MediaStore.Images.Media.IS_PENDING, 0)   // IS_PENDING을 초기화
@@ -179,4 +237,61 @@ class AddActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // 위치 정보에 관한 권한 처리
+    lateinit var locationPermission: ActivityResultLauncher<Array<String>>
+    lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var locationCallback: LocationCallback
+
+    var latitude:Double = 0.0
+    var longitude:Double = 0.0
+
+    fun getAddress(lat:Double, lon:Double):String {
+        val geocoder = Geocoder(this)
+        var list: List<Address>? = null
+        var address = ""
+
+        try {
+            list = geocoder.getFromLocation(lat, lon, 10)
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Log.i("test", "입출력 확인할 것")
+        }
+
+        if(list != null) {
+            if(list.isEmpty()) {
+                AlertDialog.Builder(this@AddActivity)
+                    .setTitle("내용을 확인해주세요.")
+                    .setMessage("해당 주소는 존재하지 않습니다.")
+                    .setCancelable(false)
+                    .setNeutralButton("닫기", { dialog, whick -> }).show()
+            } else {
+                address = list[0].getAddressLine(0).toString()
+            }
+        }
+
+        return address
+    }
+
+    fun updateLocation() {
+        val locationRequest = LocationRequest.create()
+
+        // 1초마다 정확한 위치정보 갱신
+        locationRequest.run {
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            interval = 1000
+        }
+
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                locationResult?.let {
+                    for(location in it.locations) {
+                        latitude = location.latitude
+                        longitude = location.longitude
+                    }
+                }
+            }
+        }
+
+        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
+    }
 }

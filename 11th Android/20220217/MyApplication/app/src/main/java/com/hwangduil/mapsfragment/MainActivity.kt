@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             var list:List<Address>? = null
             val addr = editAddress.text.toString()
 
-
             try {
                 list = geocoder.getFromLocationName(addr, 10)
             } catch (e:Exception) {
@@ -61,6 +60,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }
