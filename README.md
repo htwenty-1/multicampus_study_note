@@ -19,4 +19,5 @@
 |  8   | Secure Coding                  |  40  |     X      | 2022.1.4. ~ 2022.1.10.|
 |  9   | Semi Project                   |  64  |<a href="https://github.com/htwenty-1/mulcam-semi-prj">게시판 구현</a>|2022.1.11. ~ 2022.1.20.|
 |  10  | Kotlin Programming             | 32   |    O      | 2022.1.21. ~ 2022.1.27.|
-|  11  | Android with Kotlin            | 64   |    O      | 2022.1.27. ~ 2022.2.11.|
+|  11  | Android with Kotlin            | 64   |    O      | 2022.1.27. ~ 2022.2.18.|
+|  12  | Spring Boot                    | 40   |<a href="https://github.com/htwenty-1/spring-boot.git">별도 업로드</a>|2022.2.21. ~ |
