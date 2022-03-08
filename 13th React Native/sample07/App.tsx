@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Platform } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Welcome from "./src/components/Welcome";
 
 /*
@@ -13,7 +13,7 @@ function Welcome(props:any) {
 }
 */
 
-function App() {
+export default function App() {
 
   return(
     <View style={styles.container}>
@@ -33,5 +33,3 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
 })
-
-export default App;
