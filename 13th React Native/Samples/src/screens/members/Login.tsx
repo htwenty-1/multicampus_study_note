@@ -34,6 +34,8 @@ const Login = ({navigation}:any) => {       // 화면 이동을 위해 매개변
                     // let user = AsyncStorage.getItem("login");
                     // console.log(user);
                     // loginData();
+
+                    navigation.navigate("bbs");     // 로그인 성공시 게시판으로 이동
                 } else {
                     Alert.alert("로그인 실패", "아이디나 비밀번호를 확인하세요.");
                     setId("");
