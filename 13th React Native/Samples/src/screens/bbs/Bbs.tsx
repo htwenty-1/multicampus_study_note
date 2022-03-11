@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
+import BbsDetail from "./BbsDetail";
 import Bbslist from "./Bbslist";
 import BbsWrite from "./BbsWrite";
 
-const Bbs = () => {
+const Bbs = (props:any) => {
 
     const [bbslist, setBbslist] = useState("bbslist");
+    const [bbs, setBbs] = useState([]);
+
     let child:any       // 장면 전환을 위한 변수
 
     if (bbslist === "bbslist") {
         // child = (<Text>Bbs List View</Text>)
-        child = (<Bbslist />)
+        child = (<Bbslist setBbslist={setBbslist} setBbs={setBbs} />)
     } else if (bbslist === "bbswrite") {
         // child = (<Text>Bbs List Write</Text>)
-        child = (<BbsWrite />)
+        child = (<BbsWrite setBbslist={setBbslist} />)
     } else if (bbslist === "bbsdetail") {
-        child = (<Text>Bbs List Detail</Text>)
+        // child = (<Text>Bbs List Detail {JSON.stringify(bbs)}</Text>)
+        child = (<BbsDetail bbs={bbs} />)
     }
 
     return (

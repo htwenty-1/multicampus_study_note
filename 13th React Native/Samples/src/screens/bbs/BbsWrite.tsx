@@ -1,10 +1,10 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 
-export default function BbsWrite() {
+export default function BbsWrite(props:any) {
     
     const [id, setId] = useState("");
     const [title, setTitle] = useState("");
@@ -25,7 +25,39 @@ export default function BbsWrite() {
     loginData();
 
     const bbsWriteBtn = () => {
-        axios.get("http://192.168.35.149:3000/insertBbs", {params: {userId: id, title: title, content: content}})
+        console.log(id);
+        console.log(title);
+        console.log(content);
+
+        if (title.trim() === "") {
+            Alert.alert("제목 입력 확인", "제목이 입력되지 않았습니다!");
+        } else if (content.trim() === "") {
+            Alert.alert("내용 입력 확인", "내용이 입력되지 않았습니다!")
+        } else {
+            axios.get("http://192.168.35.149:3000/insertBbs", 
+            { params: {
+                id: id,
+                title: title,
+                content: content
+            }}
+            ).then(function(resp){
+                console.log(resp.data);
+
+                if (resp.data === "ok") {
+                    Alert.alert("등록 완료", "글이 등록되었습니다!");
+                    // Bbs.tsx에서 bbslist가 bbswrite일 때 setBbslist를 이 컴포넌트 함수의 매개변수인 prop로 접근해서 글 등록이 성공하면 bbslist로 돌아감.
+                    props.setBbslist("bbslist");
+                } else {
+                    Alert.alert("글이 등록되지 않았습니다.", "글이 정상적으로 등록되지 않았습니다. 확인해주세요.");
+                }
+                
+            }).catch(function(err) {
+                console.log(err);
+                Alert.alert("에러 발생", "글을 등록하는 도중에 에러가 발생했습니다!");
+            })
+        }
+
+        
     }
 
     return (
