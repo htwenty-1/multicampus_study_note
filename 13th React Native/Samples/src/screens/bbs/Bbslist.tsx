@@ -35,12 +35,12 @@ function Item ({id, title, readCount, seq, props}:any) {
 
         axios.get("http://192.168.35.149:3000/getBbsDetail", {params: {seq: seq}}).then(function(resp) {
             console.log(resp.data);
+        
+            // 페이지 이동 시 가져갈 정보
             props.setBbs(resp.data);
         }).catch(function(err) {
             console.log(err);
         })
-        
-        // 이동 시 가져갈 정보
 
         // detail 페이지로 이동
         props.setBbslist("bbsdetail")
